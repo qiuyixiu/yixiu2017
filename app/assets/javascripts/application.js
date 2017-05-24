@@ -17,4 +17,5 @@
 //= require bootstrap/dropdown
 //= require jquery.raty
 //= require ratyrate
+//= require bootstrap/collapse
 //= require_tree .
