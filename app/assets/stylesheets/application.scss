@@ -18,13 +18,18 @@
  @import "bootstrap";
  @import "font-awesome";
 
-
+// search
  #search-id {
    width: 200px;
    padding-top: 7px;
 
  }
 
+// flash
+.flash{
+   margin-bottom: -20px;
+   border-radius: 0;//圆角为0
+  }
 
   $banner: url(https://ww3.sinaimg.cn/large/006tNbRwgy1ffruxo1u8ij30sg0iyndz.jpg);
   $banner-color: #f4f6f7;
@@ -118,6 +123,7 @@
    .navbar-default .navbar-nav > li > a{
       color: #f9f7f4;
       padding-right: 20px;
+      margin-bottom: 20px;
       margin-right: 20px;
 
 
@@ -159,20 +165,18 @@
 
 
   // banner
-  .container-fluid {
-    .jumbotron {
+  .container-fluid .jumbotron {
+      padding-bottom: 110px;
+      margin: 0 -15px 0;//顶部margin为0，因此可以直接接着导航栏；左右margin为负15，因此可以顶到浏览器的边缘（抵消 container-fluid 的 15px 左右padding);底部margin为20，会跟下面的内容撑开距离
       border-radius: 0;//圆角为0
       padding-top: 0;
-    }
+
   }
 
   .jumbotron {
     background-image: $banner;
     background-repeat: no-repeat;
     background-size: cover;
-    padding-bottom: 110px;
-  //  background-position: center -38px;
-    margin: 0 -15px 0;//顶部margin为0，因此可以直接接着导航栏；左右margin为负15，因此可以顶到浏览器的边缘（抵消 container-fluid 的 15px 左右padding);底部margin为20，会跟下面的内容撑开距离
     color:  #fff; //字体颜色
     position: relative;
     height: 670px;
