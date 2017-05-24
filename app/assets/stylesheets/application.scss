@@ -319,7 +319,7 @@
 
  //欣赏成果 part4
  .we-do{
-     padding-bottom: 0px;
+     padding-bottom: 30px;
      padding-top: 10px;
      background-color: #fcf7f2;
  }
@@ -358,6 +358,17 @@
 
  }
 
+ .hjc-img-wrap {
+
+    img {
+      width: 255;
+      height: 255;
+    }
+    &:hover {
+      transform: scale(1.2);
+      transition: all .8s;
+    }
+  }
 
 
 
