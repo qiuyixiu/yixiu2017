@@ -53,7 +53,9 @@
    body {
      /* Margin bottom by footer height */
      margin-bottom: 50px;
+
    }
+
 
    .index-title {
      color:#666;
@@ -420,3 +422,48 @@
            margin-top: 25px;
        }
    }
+
+
+
+  //精选商品页面首图
+    .product-box{
+      text-align: center;
+      padding:20px 0 100px 0;
+
+    .prod_banner {
+     width: 100%;
+     margin-bottom: 20px;
+    }
+  }
+
+    .prod-category {
+      position: relative;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .hr {
+     margin-top: 21px;
+     margin-bottom: 21px;
+     border: 0;
+     border-top: 1px solid #ecf0f1;
+    }
+
+    //产品列表
+    .prod-content {
+    img {
+      width: 100%;
+      margin: 7.5px auto 7.5px auto;
+
+    }
+
+    h2 {
+      margin-top: 150px;
+    }
+  }
+
+  .prod-info {
+    text-align: left;
+    line-height: 14px;
+    min-height: 55px;
+  }
