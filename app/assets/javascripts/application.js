@@ -18,4 +18,5 @@
 //= require jquery.raty
 //= require ratyrate
 //= require bootstrap/collapse
+//= require bootstrap/modal
 //= require_tree .
