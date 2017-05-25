@@ -96,7 +96,7 @@
 
         border-color: #212121; //边框色
 
-        margin-bottom: 0px; //底部 margin 不撑开距离
+        margin-bottom: 20px; //底部 margin 不撑开距离
 
     }
 
@@ -330,39 +330,39 @@
      background-color: #fcf7f2;
  }
 
- .product-ul {
-   padding: 0 20px 0;
-   margin: 30px auto 0;
-   text-align: center;
-   overflow: hidden;
-   height: 620px;
-   width: 1154px;
-   li {
-     display: inline-block;
-     width: 300px;
-     height: 278px;
-     margin-left: 20px;
-     margin-right: 20px;
-     position: relative;
-     margin: 10px;
-     overflow: hidden;
-     .product-img-wrap {
-       width:310px;
-       height: 270px;
-       img {
-         width: 100%;
-         height: auto;
-       }
-       &:hover {
-         transform: scale(1.2);
-         -webkit-transform: scale(1.2);
-         -webkit-transition: all .8s;
-         transition: all .8s;
-       }
-     }
-   }
-
- }
+ // .product-ul {
+ //   padding: 0 20px 0;
+ //   margin: 30px auto 0;
+ //   text-align: center;
+ //   overflow: hidden;
+ //   height: 620px;
+ //   width: 1154px;
+ //   li {
+ //     display: inline-block;
+ //     width: 300px;
+ //     height: 278px;
+ //     margin-left: 20px;
+ //     margin-right: 20px;
+ //     position: relative;
+ //     margin: 10px;
+ //     overflow: hidden;
+ //     .product-img-wrap {
+ //       width:310px;
+ //       height: 270px;
+ //       img {
+ //         width: 100%;
+ //         height: auto;
+ //       }
+ //       &:hover {
+ //         transform: scale(1.2);
+ //         -webkit-transform: scale(1.2);
+ //         -webkit-transition: all .8s;
+ //         transition: all .8s;
+ //       }
+ //     }
+ //   }
+ //
+ // }
 
  .hjc-img-wrap {
 
