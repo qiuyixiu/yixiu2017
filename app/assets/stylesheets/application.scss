@@ -36,7 +36,7 @@
   $btn-color: #fff;
   $btn-background: #29426b;
   $btn-background-hover: #00DBE9;
-  $db-image:url(https://ww4.sinaimg.cn/large/006tKfTcgy1ffvhaiw9odj310o05igrp.jpg);
+  $db-image:url(https://ww1.sinaimg.cn/large/006tNbRwgy1ffwkzvgkwzj310o05in2q.jpg);
 
 
 
@@ -212,7 +212,7 @@
 
     .slogan {
         margin: 30px auto 0;
-        font-size: 40px;
+        font-size: 35px;
         line-height: 26px;
         text-align: center;
       }
@@ -289,18 +289,19 @@
     .advantage-box {
       display: block;
       border-style: none;
-      border-radius: 0;
-      width: 290px;
+
+      // width: 290px;
       position: relative;
       margin: 5px 15px 20px;
       float: left;
       text-align: center;
     }
 
-    .image{
-      width: 10px;
-      height:10px;
-    }
+    // .image{
+    //   width: 10px;
+    //   height:10px;
+    //
+    // }
 
     .advantage-box >h3 {
       color: #666;
@@ -316,10 +317,13 @@
       color:#666;
     }
 
+
+    
     .round {
        border-radius:53%;
        width: 150px;
        height: 150px;
+
     }
 
 
@@ -328,30 +332,25 @@
      padding-bottom: 30px;
      padding-top: 10px;
      background-color: #fcf7f2;
+     margin-left:-15px;
+     margin-right:-15px;
+
  }
 
  .product-ul {
-   padding: 0 20px 0;
-   margin: 30px auto 0;
-   text-align: center;
-   overflow: hidden;
-   height: 620px;
-   width: 1154px;
    li {
      display: inline-block;
-     width: 300px;
      height: 278px;
-     margin-left: 20px;
-     margin-right: 20px;
-     position: relative;
-     margin: 10px;
-     overflow: hidden;
+
      .product-img-wrap {
-       width:310px;
-       height: 270px;
+       width:268px;
+       height: 243px;
+       box-shadow: 1px 1.5px 1px #ccc;
+
        img {
          width: 100%;
          height: auto;
+
        }
        &:hover {
          transform: scale(1.2);
@@ -364,17 +363,7 @@
 
  }
 
- .hjc-img-wrap {
 
-    img {
-      width: 255;
-      height: 255;
-    }
-    &:hover {
-      transform: scale(1.2);
-      transition: all .8s;
-    }
-  }
 
 
 
@@ -386,7 +375,7 @@
    // padding-bottom: 10px;
    margin: 0 -15px 0;//顶部margin为0，因此可以直接接着导航栏；左右margin为负15，因此可以顶到浏览器的边缘（抵消 container-fluid 的 15px 左右padding);底部margin为20，会跟下面的内容撑开距离
    position: relative;
-   height: 290px;
+   height: 180px;
    letter-spacing: 2px;
 
 
@@ -410,8 +399,8 @@
    }
 
      .lead {
-       margin-top: 90px;
-       margin-bottom: 150px;
+       margin-top: 55px;
+       margin-bottom: 100px;
        text-align: center;
        color: white;
        .b-btn {
@@ -426,7 +415,7 @@
        bottom: 0;
        width: 100%;
        /* Set the fixed height of the footer here */
-       height: 90px;
+       height: 80px;
        background-color: #7c3a2d;
 
        p {
