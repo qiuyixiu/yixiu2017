@@ -41,6 +41,14 @@ class ProductsController < ApplicationController
   def upvote
     @product = Product.find(params[:id])
     @product.upvote_by current_user
+    flash[:notice] = "您已点赞宝贝"
+    redirect_to :back
+  end
+
+  def downvote
+    @product = Product.find(params[:id])
+    @product.downvote_by current_user
+    flash[:notice] = "您已取消点赞宝贝"
     redirect_to :back
   end
 

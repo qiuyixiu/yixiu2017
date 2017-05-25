@@ -25,6 +25,7 @@ Rails.application.routes.draw do
     end
     member do
       put "like", to: "products#upvote"
+      put "unlike", to: "products#downvote"
     end
     collection do
       get :search
