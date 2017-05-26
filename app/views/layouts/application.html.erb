@@ -10,7 +10,9 @@
   </head>
 
   <body>
-    <div class="container-fluid">
+    <div class="container-fluid body-content">
+      <!-- body-content和content-inside涉及到footer置底 -->
+      <div class="content-inside">
       <div class="row">
         <%= render "common/navbar" %>
       </div>
@@ -19,7 +21,7 @@
       </div>
       <%= yield %>
     </div>
-
+   </div>
       <%= render "common/footer" %>
   </body>
 </html>
