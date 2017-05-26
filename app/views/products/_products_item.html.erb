@@ -10,11 +10,10 @@
       <% end %>
     <% end %>
       <%= product.title %> ￥ <%= product.price %>
-    <%= link_to like_product_path(product), method: :put do %>
-      <div class="pi-thumbs-up">
-      <i class="fa fa-thumbs-up fa-2x" , style="color:#ff5722;"></i>
-      <%= product.get_upvotes.size %>
-      </div>
+    <% if !product.users.include?(current_user) %>
+      <%= link_to("",favorite_product_path(product),method: :post, class: "fa fa-thumbs-o-up fa-2x") %><%= product.users.count %>
+    <% else %>
+      <%= link_to("", unfavorite_product_path(product),method: :post,  class: "fa fa-thumbs-up fa-2x", style: "color:red") %><%= product.users.count %>
     <% end %>
   </div>
 <% end %>

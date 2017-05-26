@@ -23,13 +23,14 @@ Rails.application.routes.draw do
     member do
       post :add_to_cart
     end
-    member do
-      put "like", to: "products#upvote"
-      put "unlike", to: "products#downvote"
-    end
     collection do
       get :search
     end
+    member do
+      post :favorite
+      post :unfavorite
+    end
+
   end
 
   resources :carts do
@@ -52,4 +53,6 @@ Rails.application.routes.draw do
   namespace :account do
     resources :orders
   end
+
+  resources :favorites
 end

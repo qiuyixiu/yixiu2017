@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  before_action :authenticate_user!, only: [:favorite, :unfavorite]
   before_action :validate_search_key, only: [:search]
 
   def index
@@ -38,18 +39,16 @@ class ProductsController < ApplicationController
     redirect_to :back
   end
 
-  def upvote
+  def favorite
     @product = Product.find(params[:id])
-    @product.upvote_by current_user
-    flash[:notice] = "您已点赞宝贝"
-    redirect_to :back
+    current_user.favorite_products << @product
+    redirect_to :back, notice:"您已点赞宝贝!"
   end
 
-  def downvote
+  def unfavorite
     @product = Product.find(params[:id])
-    @product.downvote_by current_user
-    flash[:notice] = "您已取消点赞宝贝"
-    redirect_to :back
+    current_user.favorite_products.delete(@product)
+    redirect_to :back, notice: "您已取消点赞宝贝!"
   end
 
   def search

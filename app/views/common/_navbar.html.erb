@@ -51,11 +51,14 @@
             <ul class="dropdown-menu">
               <% if current_user.admin? %>
                 <li>
-                  <%= link_to("Admin 选单", admin_products_path) %>
+                  <%= link_to("管理后台", admin_products_path) %>
                 </li>
               <% end %>
               <li>
-                <%= link_to("个人订单列表", account_orders_path ) %>
+                <%= link_to("我的订单", account_orders_path ) %>
+              </li>
+              <li>
+                <%= link_to("我的点赞", favorites_path) %>
               </li>
               <li> <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %></li>
             </ul>
@@ -104,7 +107,7 @@
         <%= f.error_notification %>
         <div class="form-inputs">
          <%= f.input :email, label: "邮箱", required: true, autofocus: true %>
-         <%= f.input :password, label: "密码", requiered: true, hint: ("#{minimum_password_length} characters minimum" if @minimum_password_length) %>
+         <%= f.input :password, label: "密码", requiered: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
          <%= f.input :password_confirmation, label: "再输入一次", required: true %>
         </div>
         <div class="form-actions">
