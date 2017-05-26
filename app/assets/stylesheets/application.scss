@@ -204,7 +204,7 @@
   }
 
    .navbar-default .navbar-brand {
-      color: #f9f7f4; //字体颜色
+      color: #FFF2F0; //字体颜色
 
       padding: 10px 25px; //上下10px，左右15px
       line-height: 30px; //文字行高
@@ -273,7 +273,7 @@
     background-image: $banner;
     background-repeat: no-repeat;
     background-size: cover;
-    color:  #fff; //字体颜色
+    color:  #FFF2F0; //字体颜色
     position: relative;
     height: 670px;
     letter-spacing: 2px;
@@ -316,7 +316,7 @@
         margin-top: 40px;
         margin-bottom: 230px;
         text-align: center;
-        color: white;
+        color: #FFF2F0;
         .b-btn {
           padding: 10px 20px;
         }
@@ -335,7 +335,7 @@
 
     .b-btn:focus,
     .b-btn:hover {
-      color: #fff;
+      color: #FFF2F0;
       background-color:#ce422d;//鼠标放置在btn上的背景颜色
       border-color: #ce422d;//鼠标放置在btn上的边框颜色 深红色
     }
@@ -424,7 +424,9 @@
      padding-bottom: 30px;
      padding-top: 10px;
      background-color: #fcf7f2;
- }
+       }
+
+  
 
  // .product-ul {
  //   padding: 0 20px 0;
@@ -509,7 +511,7 @@
        margin-top: 50px;
        margin-bottom: 90px;
        text-align: center;
-       color: white;
+       color: #FFF2F0;
        .b-btn {
          padding: 10px 20px;
        }
@@ -521,7 +523,7 @@
   .full {
     width: 100%;
     background-color: #FFDFD9;
-    border-color: #fff;
+    border-color: #FFF2F0;
     border: 1px;
 
 }
