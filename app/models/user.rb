@@ -4,6 +4,7 @@ class User < ApplicationRecord
   has_many :orders
   has_many :favorites
   has_many :favorite_products, through: :favorites, source: :product
+  has_many :comments
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable

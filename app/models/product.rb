@@ -16,4 +16,5 @@ class Product < ApplicationRecord
 
   has_many :favorites
   has_many :users, through: :favorites, source: :user
+  has_many :comments
 end

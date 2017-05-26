@@ -20,6 +20,7 @@
       <% if @product.quantity.present? && @product.quantity > 0 %>
         <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post,
                    class: "btn btn-primary btn-lg btn-danger") %>
+        <%= link_to("发表评论", new_product_comment_path(@product), class: "btn btn-default btn-lg") %>
       <% else %>
         已销售一空，无法购买
       <% end %>
@@ -31,5 +32,23 @@
         <%= link_to("", unfavorite_product_path(@product),method: :post,  class: "fa fa-thumbs-up fa-2x", style: "color:red") %><%= @product.users.count %>
       <% end %>
     </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>评论内容</th>
+          <th>发表用户</th>
+          <th>发表时间</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @comments.each do |comment| %>
+          <tr>
+            <td><%= comment.content %></td>
+            <td><%= comment.user.email %></td>
+            <td><%= comment.created_at %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
   </div>
 </div>
