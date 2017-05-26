@@ -144,7 +144,7 @@
   $btn-color: #fff;
   $btn-background: #29426b;
   $btn-background-hover: #00DBE9;
-  $db-image:url(https://ww4.sinaimg.cn/large/006tKfTcgy1ffvhaiw9odj310o05igrp.jpg);
+  $db-image:url(https://ww1.sinaimg.cn/large/006tNbRwgy1ffwkzvgkwzj310o05in2q.jpg);
 
 
 
@@ -215,7 +215,7 @@
   }
 
    .navbar-default .navbar-brand {
-      color: #f9f7f4; //字体颜色
+      color: #FFF2F0; //字体颜色
 
       padding: 10px 25px; //上下10px，左右15px
       line-height: 30px; //文字行高
@@ -284,7 +284,7 @@
     background-image: $banner;
     background-repeat: no-repeat;
     background-size: cover;
-    color:  #fff; //字体颜色
+    color:  #FFF2F0; //字体颜色
     position: relative;
     height: 670px;
     letter-spacing: 2px;
@@ -327,7 +327,7 @@
         margin-top: 40px;
         margin-bottom: 230px;
         text-align: center;
-        color: white;
+        color: #FFF2F0;
         .b-btn {
           padding: 10px 20px;
         }
@@ -346,7 +346,7 @@
 
     .b-btn:focus,
     .b-btn:hover {
-      color: #fff;
+      color: #FFF2F0;
       background-color:#ce422d;//鼠标放置在btn上的背景颜色
       border-color: #ce422d;//鼠标放置在btn上的边框颜色 深红色
     }
@@ -435,7 +435,9 @@
      padding-bottom: 30px;
      padding-top: 10px;
      background-color: #fcf7f2;
- }
+       }
+
+  
 
  // .product-ul {
  //   padding: 0 20px 0;
@@ -493,7 +495,7 @@
    // padding-bottom: 10px;
    margin: 0 -15px 0;//顶部margin为0，因此可以直接接着导航栏；左右margin为负15，因此可以顶到浏览器的边缘（抵消 container-fluid 的 15px 左右padding);底部margin为20，会跟下面的内容撑开距离
    position: relative;
-   height: 290px;
+   height: 150px;
    letter-spacing: 2px;
 
 
@@ -517,27 +519,161 @@
    }
 
      .lead {
-       margin-top: 90px;
-       margin-bottom: 150px;
+       margin-top: 50px;
+       margin-bottom: 90px;
        text-align: center;
-       color: white;
+       color: #FFF2F0;
        .b-btn {
          padding: 10px 20px;
        }
      }
    }
 
-   //footer
-   .footer {
-       position: absolute;
-       bottom: 0;
-       width: 100%;
-       /* Set the fixed height of the footer here */
-       height: 90px;
-       background-color: #7c3a2d;
 
-       p {
-           color: white;
-           margin-top: 25px;
-       }
-   }
+//footer
+  .full {
+    width: 100%;
+    background-color: #FFDFD9;
+    border-color: #FFF2F0;
+    border: 1px;
+
+}
+.gap {
+	height: 30px;
+	width: 100%;
+	clear: both;
+	display: block;
+}
+.footer {
+	background: #9A584C;
+	height: auto;
+	padding-bottom: 30px;
+	// position: relative;
+
+	width: 100%;
+	// border-bottom: 1px solid #5E2116;
+	border-top: 1px solid #9A584C;
+}
+.footer p {
+	margin: 0;
+
+}
+.footer img {
+	max-width: 100%;
+}
+.footer h3 {
+	border-bottom: 1px solid #FFF2F0;
+	color: #FFF2F0;
+	font-size: 18px;
+	font-weight: 600;
+	line-height: 27px;
+	padding: 40px 0 10px;
+	text-transform: uppercase;
+}
+.footer ul {
+	font-size: 13px;
+	list-style-type: none;
+	margin-left: 0;
+	padding-left: 0;
+	margin-top: 15px;
+	color: #FFF2F0;
+}
+.footer ul li a {
+	padding: 0 0 5px 0;
+	display: block;
+}
+.footer a {
+	color: #FFF2F0;
+}
+.supportLi h4 {
+	font-size: 20px;
+	font-weight: lighter;
+	line-height: normal;
+	margin-bottom: 0 !important;
+	padding-bottom: 0;
+}
+.newsletter-box input#appendedInputButton {
+	background: #FFF2F0;
+	display: inline-block;
+	float: left;
+	height: 30px;
+	clear: both;
+	width: 100%;
+}
+.newsletter-box .btn {
+	border: medium none;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-o-border-radius: 3px;
+	-ms-border-radius: 3px;
+	border-radius: 3px;
+	display: inline-block;
+	height: 40px;
+	padding: 0;
+	width: 100%;
+	color: #FFF2F0;
+}
+.newsletter-box {
+	overflow: hidden;
+}
+.bg-red {
+	background-image: -moz-linear-gradient(center bottom, #FFDFD9 100%, #FFDFD9 100%);
+  background-color: #E5B1A8;
+	box-shadow: 0 1px 0 #FFF2F0;
+}
+.social li {
+	background: none repeat scroll 0 0 #E5B1A8;
+	border: 2px solid #FFF2F0;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-o-border-radius: 50%;
+	-ms-border-radius: 50%;
+	border-radius: 50%;
+	float: left;
+	height: 36px;
+	line-height: 36px;
+	margin: 0 8px 0 0;
+	padding: 0;
+	text-align: center;
+	width: 36px;
+	transition: all 0.5s ease 0s;
+	-moz-transition: all 0.5s ease 0s;
+	-webkit-transition: all 0.5s ease 0s;
+	-ms-transition: all 0.5s ease 0s;
+	-o-transition: all 0.5s ease 0s;
+}
+.social li:hover {
+	transform: scale(1.15) rotate(360deg);
+	-webkit-transform: scale(1.1) rotate(360deg);
+	-moz-transform: scale(1.1) rotate(360deg);
+	-ms-transform: scale(1.1) rotate(360deg);
+	-o-transform: scale(1.1) rotate(360deg);
+}
+.social li a {
+	color: #FFF2F0;
+}
+.social li:hover {
+	border: 2px solid #2c3e50;
+	background: #2c3e50;
+}
+.social li a i {
+	font-size: 16px;
+	margin: 0 0 0 5px;
+	color: #EDEFF1 !important;
+}
+.footer-bottom {
+	background: #7c3a2d;
+	border-top: 1px solid #5E2116;
+	padding-top: 10px;
+	padding-bottom: 10px;
+  position: absolute;
+  width:100%;
+}
+.footer-bottom p.pull-left {
+	padding-top: 6px;
+  color: #FFF2F0;
+}
+.payments {
+	font-size: 1.5em;
+  color: #FFF2F0;
+}
