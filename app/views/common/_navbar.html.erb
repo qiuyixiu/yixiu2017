@@ -40,8 +40,6 @@
         <% if !current_user %>
           <li><a href="#" data-toggle="modal" data-target="#signup-modal">注册</a></li>
           <li><a href="#" data-toggle="modal" data-target="#login-modal">登录</a></li>
-          <!-- <li><%= link_to("注册", new_user_registration_path) %></li>
-          <li><%= link_to(content_tag(:i, '登入', class: 'fa fa-sign-in'), new_user_session_path) %></li> -->
         <% else %>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -71,38 +69,14 @@
   <!-- /.container-fluid -->
 </nav>
 
-<!-- <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none,">
-  <div class="modal-dialog" role="document">
-    <div class="loginmodal-container">
-      <div class="text-center">
-        <h2><sapn class="fa fa-lock"></sapn>用户登录</h2>
-      </div>
-      <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <div class="form-inputs">
-          <%= f.input :email, label: "邮箱", required: false, autofocus: true %>
-          <%= f.input :password, label: "密码", required: false %>
-          <%= f.input :remember_me, label: "记住我", as: :boolean if devise_mapping.rememberable? %>
-        </div>
-        <div class="form-actions">
-          <%= f.button :submit, "登录" %>
-        </div>
-        <hr>
-        <div class="text-center">
-            <a href="#" data-toggle="modal" data-target="#signup-modal">还不是用户，请注册</a>
-            <div class="fa fa-chevron-circle-right">
-            </div>
-        </div>
-      <% end %>
-    </div>
-  </div>
-</div> -->
 
+<!-- 注册登录弹窗 -->
 <div class="modal fade" id="login-modal" role="dialog">
   <div class="modal-dialog">
     <div class="loginmodal-container">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h2 class="text-center">Log in</h2>
+        <h2 class="text-center">用户登录</h2>
       </div>
       <div class="modal-body">
         <%= form_for(resource, as: resource_name, url: session_path(resource_name),
@@ -113,7 +87,7 @@
             <span class="input-group-addon">
               <span class="glyphicon glyphicon-envelope"></span>
             </span>
-            <%= f.email_field :email, autofocus: true, required: true, class: "form-control", placeholder:"Email" %>
+            <%= f.email_field :email, autofocus: true, required: true, class: "form-control", placeholder:"邮箱" %>
           </div>
 
           <br>
@@ -122,29 +96,29 @@
             <span class="input-group-addon">
               <span class="glyphicon glyphicon-lock"></span>
             </span>
-            <%= f.password_field :password, autocomplete: "off", required: true, class: "form-control", placeholder: "Password" %>
+            <%= f.password_field :password, autocomplete: "off", required: true, class: "form-control", placeholder: "密码" %>
           </div>
 
           <% if devise_mapping.rememberable? -%>
           <div class="checkbox col-md-12" style="padding-left:1.5em;">
             <%= f.check_box :remember_me %>
-            <%= f.label :remember_me %>
+            <%= f.label :记住我 %>
          </div>
          <% end -%>
 
          <div class="form-actions">
            <br>
-           <%= f.submit "Log in", class: 'btn btn-success', id: 'login_btn' %>
+           <%= f.submit "登录", class: 'btn btn-success', id: 'login_btn' %>
          </div>
        <% end %>
      </div>
      <div class="modal-footer">
-       <button type="submit" class="btn btn-danger pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+       <button type="submit" class="btn btn-danger pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> 取消</button>
        <div class="links pull-right">
-         <button class="btn btn-info btn-small" data-toggle="modal" data-target="#signup-modal" data-dismiss='modal'>Sign up</button><br />
+         <button class="btn btn-info btn-small" data-toggle="modal" data-target="#signup-modal" data-dismiss='modal'>注册</button><br />
          <br>
          <div class="center-block">
-           <button class="btn btn-info btn-small text-center" data-toggle="modal" data-target="#forgot-modal" data-dismiss='modal'>Forgot password?</button><br />
+           <button class="btn btn-info btn-small text-center" data-toggle="modal" data-target="#forgot-modal" data-dismiss='modal'>忘记密码?</button><br />
          </div>
        </div>
      </div>
@@ -157,7 +131,7 @@
   <div class="modal-dialog">
     <div class="loginmodal-container">
       <div class="modal-header">
-          <h2 class="text-center">Sign up</h2>
+          <h2 class="text-center">用户注册</h2>
       </div>
       <div class="modal-body">
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name),
@@ -170,7 +144,7 @@
             <span class="input-group-addon">
               <span class="glyphicon glyphicon-envelope"></span>
             </span>
-            <%= f.email_field :email, autofocus: true, required: true, class: "form-control", placeholder: "Email" %>
+            <%= f.email_field :email, autofocus: true, required: true, class: "form-control", placeholder: "邮箱" %>
           </div>
 
           <br>
@@ -179,7 +153,7 @@
             <span class="input-group-addon">
               <span class="glyphicon glyphicon-lock"></span>
             </span>
-            <%= f.password_field :password, autocomplete: "off", required: true,minlength: 8, class: "form-control", placeholder: "Password(8 character minimum)" %>
+            <%= f.password_field :password, autocomplete: "off", required: true,minlength: 6, class: "form-control", placeholder: "密码(最少6位字符)" %>
           </div>
 
           <br>
@@ -188,22 +162,22 @@
             <span class="input-group-addon">
               <span class="glyphicon glyphicon-lock"></span>
             </span>
-          <%= f.password_field :password_confirmation, autocomplete: "off", required: true, minlength: 8, class: "form-control", placeholder: "Repeat password" %>
+          <%= f.password_field :password_confirmation, autocomplete: "off", required: true, minlength: 6, class: "form-control", placeholder: "确认密码" %>
         </div>
 
         <div class="form-actions">
           <br>
-          <%= f.submit "Sign up", class: 'btn btn-success' %>
+          <%= f.submit "注册", class: 'btn btn-success' %>
         </div>
       <% end %>
     </div>
     <div class="modal-footer">
-      <button type="submit" class="btn btn-danger pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+      <button type="submit" class="btn btn-danger pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> 取消</button>
       <div class="links pull-right">
-        <button class="btn btn-info btn-small" data-toggle="modal" data-target="#login-modal" data-dismiss='modal'>Log in</button><br />
+        <button class="btn btn-info btn-small" data-toggle="modal" data-target="#login-modal" data-dismiss='modal'>登录</button><br />
         <br>
         <div class="center-block">
-          <button class="btn btn-info btn-small text-center" data-toggle="modal" data-target="#forgot-modal" data-dismiss='modal'>Forgot password?</button><br />
+          <button class="btn btn-info btn-small text-center" data-toggle="modal" data-target="#forgot-modal" data-dismiss='modal'>忘记密码?</button><br />
         </div>
       </div>
     </div>
@@ -216,7 +190,7 @@
         <div class="loginmodal-container">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h2>Forgot your password?</h2>
+                <h2>忘记密码?</h2>
             </div>
             <div class="modal-body">
                 <%= form_for(resource, as: resource_name, url: password_path(resource_name),
@@ -229,47 +203,26 @@
                       <span class="input-group-addon">
                         <span class="glyphicon glyphicon-envelope"></span>
                       </span>
-                      <%= f.email_field :email, autofocus: true, required:true, class: "form-control", placeholder:"Email" %>
+                      <%= f.email_field :email, autofocus: true, required:true, class: "form-control", placeholder:"邮箱" %>
                     </div>
 
                   <div class="form-actions">
                     <br>
-                    <%= f.submit "Send me reset password instructions", class: 'btn btn-success' %>
+                    <%= f.submit "请去邮箱找回", class: 'btn btn-success' %>
                   </div>
                 <% end %>
 
             </div>
             <div class="modal-footer">
-                <button type="submit" class="btn btn-danger pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                <button type="submit" class="btn btn-danger pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> 取消</button>
                 <div class="links pull-right">
-                    <button class="btn btn-info btn-small" data-toggle="modal" data-target="#login-modal" data-dismiss='modal'>Log in</button><br />
+                    <button class="btn btn-info btn-small" data-toggle="modal" data-target="#login-modal" data-dismiss='modal'>登录</button><br />
                     <br>
                     <div class="center-block">
-                      <button class="btn btn-info btn-small" data-toggle="modal" data-target="#signup-modal" data-dismiss='modal'>Sign up</button><br />
+                      <button class="btn btn-info btn-small" data-toggle="modal" data-target="#signup-modal" data-dismiss='modal'>注册</button><br />
                     </div>
                   </div>
               </div>
           </div>
       </div>
   </div>
-
-<!-- <div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-  <div class="modal-dialog">
-    <div class="loginmodal-container">
-      <div class="text-center">
-        <h2><sapn class="fa fa-chevron-circle-right"></sapn>用户注册</h2>
-      </div>
-      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-        <%= f.error_notification %>
-        <div class="form-inputs">
-         <%= f.input :email, label: "邮箱", required: true, autofocus: true %>
-         <%= f.input :password, label: "密码", requiered: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-         <%= f.input :password_confirmation, label: "再输入一次", required: true %>
-        </div>
-        <div class="form-actions">
-         <%= f.button :submit, "注册" %>
-        </div>
-      <% end %>
-    </div>
-  </div>
-</div> -->

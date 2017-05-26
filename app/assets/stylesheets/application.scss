@@ -20,7 +20,7 @@
  @import url(http://fonts.googleapis.com/css?family=Roboto);
 
 
- // 固定位置的消息通知
+ // 固定位置的消息通知（flashes)
 .alert {
   position: fixed; // 这个属性防止将内容挤下去
   top: 51px; // 让消息在导航条下面，不挡住导航，根据自己导航navbar的高度调整
