@@ -11,12 +11,28 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
-//= require turbolinks
 //= require bootstrap/alert
 //= require bootstrap/dropdown
 //= require jquery.raty
 //= require ratyrate
 //= require bootstrap/collapse
 //= require bootstrap/modal
+//= require turbolinks
 //= require_tree .
+
+
+
+//flashes自动消失
+$(document).on('turbolinks:load', function() {
+
+  slideUpAlert();
+
+})
+
+function slideUpAlert() {
+  $(".alert").delay(2000).slideUp(250, function() {
+    $(this).remove();
+  });
+}
