@@ -174,7 +174,7 @@
   //  }
 
    .index-title {
-     color:#666;
+     color:#996247;
      margin-bottom: 10px;
      font-size: 1.8em;
      font-weight: 700;
@@ -189,7 +189,7 @@
 
   .short-line{
       display: block;
-      background: #C07F6F;
+      background: #9A584C;
       border-style: none;
       border-radius: 0;
       margin-left: auto;
@@ -389,9 +389,9 @@
     }
 
     .men-zi {
-      line-height: 2.5em;
-      font-size: 1.2em;
-      color: #666;
+      line-height: 2em;
+      font-size: 1em;
+      color: #996247;
 
     }
 
@@ -420,7 +420,7 @@
     }
 
     .advantage-box >h3 {
-      color: #666;
+      color: #996247;
       letter-spacing: 1px;
       line-height: 22px;
       margin:15px;
@@ -428,9 +428,9 @@
     }
 
     .advantage-box >p {
-      line-height: 1.8em;
-      font-size: 1em;
-      color:#666;
+      line-height: 1.5em;
+      font-size: 0.9em;
+      color:#996247;
     }
 
     .round {
@@ -439,6 +439,15 @@
        height: 150px;
     }
 
+    .river-text {
+      color:#996247;
+      font-size:1.3em;
+    }
+
+    .text-small {
+      color:#996247;
+      font-size:0.9em;
+    }
 
  //欣赏成果 part4
  .we-do{
@@ -447,7 +456,10 @@
      background-color: #fcf7f2;
        }
 
-
+  .chengguo-text {
+    color:#996247;
+    font-size: 1.8em;
+  }
 
  // .product-ul {
  //   padding: 0 20px 0;
@@ -686,4 +698,71 @@
 .payments {
 	font-size: 1.5em;
   color: #FFF2F0;
+}
+
+
+$pro-img:url(https://ww1.sinaimg.cn/large/006tNbRwgy1fg00bbp06hj310o05iq91.jpg);
+
+
+
+
+//产品首图
+.pro-image {
+  background-image:$pro-img;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color:  #996247; //字体颜色
+  position: relative;
+  height: 180px;
+  letter-spacing: 2px;
+  margin-top: -20px;
+}
+
+.pro-title {
+    text-align: center;//文字
+    padding: 60px 20px 0;//上60px，左右20px，下0
+    font-size:25px;
+    font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
+    padding-left: 490px;
+}
+
+.pro-slogan{
+  margin: 5px auto 0;
+  font-size: 18px;
+  line-height: 26px;
+  text-align: center;
+  padding-left: 490px;
+}
+//产品首图结束
+
+//产品页面
+.product-box {
+  text-align: center;
+  padding: 0 0 100px 0;
+
+}
+
+.bg-image {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.product-content {
+    img {
+      width: 100%;
+      margin: 7.5px auto 7.5px auto;
+    }
+  }
+
+  .product-info {
+    text-align: left;
+    line-height: 14px;
+    min-height: 55px;
+    color:#996247;
+  }
+
+.classify-text >a {
+  color:#996247; //产品分类字体颜色
+  font-size: 18px;
+
 }
