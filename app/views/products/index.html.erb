@@ -1,6 +1,14 @@
-<br><br><br>
+
+<div class="product-box">
 <div class="container">
-  <h1 class="text-center" style="font-family:Verdana">我们的商品</h1><br>
+  <div class="pro-image">
+      <h1 class="pro-title">真正的奢侈是能够自由选择</h1>
+      <p class="pro-slogan">
+      Do it yourself, or do for you! 
+      </p>
+    </div>
+  <!-- <img src="https://ww1.sinaimg.cn/large/006tNbRwgy1fg00bbp06hj310o05iq91.jpg" alt="" class="bg-image"> -->
+  <!-- <h1 class="text-center" style="font-family:Verdana">我们的商品</h1><br> -->
   <ul class="nav nav-tabs">
         <div class="col-md-2 text-center">
           <%= link_to  products_path do %>
@@ -44,12 +52,12 @@
            </ul>
         </div>
   </ul>
-</div>
+
 
 <div class="row">
 
   <% @products.each do |product| %>
-    <div class="col-xs-6 col-md-3">
+    <div class="col-xs-12 col-sm-4 col-md-3 product-content">
       <%= link_to product_path(product) do %>
         <% if product.image.present? %>
           <%= image_tag(product.image.thumb.url, class: "thumbnails") %>
@@ -57,15 +65,19 @@
           <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
         <% end %>
       <% end %>
+      <div class="product-info">
         <%= product.title %> ￥ <%= product.price %>
 
       <% if !product.users.include?(current_user) %>
         <%= link_to("",favorite_product_path(product),method: :post, class: "fa fa-thumbs-o-up fa-2x") %><%= product.users.count %>
+
       <% else %>
         <%= link_to("", unfavorite_product_path(product),method: :post,  class: "fa fa-thumbs-up fa-2x", style: "color:red") %><%= product.users.count %>
       <% end %>
+      </div>
     </div>
   <% end %>
+
 </div>
 
 
@@ -73,4 +85,6 @@
 
     <%= will_paginate @products, renderer: BootstrapPagination::Rails %>
 
+</div>
+</div>
 </div>

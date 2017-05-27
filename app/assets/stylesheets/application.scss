@@ -687,3 +687,63 @@
 	font-size: 1.5em;
   color: #FFF2F0;
 }
+
+
+$pro-img:url(https://ww1.sinaimg.cn/large/006tNbRwgy1fg00bbp06hj310o05iq91.jpg);
+
+
+
+//产品页面
+//产品首图
+.pro-image {
+  background-image:$pro-img;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color:  #996247; //字体颜色
+  position: relative;
+  height: 180px;
+  letter-spacing: 2px;
+  margin-top: -20px;
+}
+
+.pro-title {
+    text-align: center;//文字
+    padding: 60px 20px 0;//上60px，左右20px，下0
+    font-size:25px;
+    font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
+    padding-left: 490px;
+}
+
+.pro-slogan{
+  margin: 5px auto 0;
+  font-size: 18px;
+  line-height: 26px;
+  text-align: center;
+  padding-left: 490px;
+}
+//产品首图结束
+
+.product-box {
+  text-align: center;
+  padding: 0 0 100px 0;
+
+}
+
+.bg-image {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.product-content {
+    img {
+      width: 100%;
+      margin: 7.5px auto 7.5px auto;
+    }
+
+  }
+
+  .product-info {
+    text-align: left;
+    line-height: 14px;
+    min-height: 55px;
+  }
