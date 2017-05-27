@@ -766,3 +766,46 @@ $pro-img:url(https://ww1.sinaimg.cn/large/006tNbRwgy1fg00bbp06hj310o05iq91.jpg);
   font-size: 18px;
 
 }
+
+
+//商品详情页
+
+// 页面头部微调
+.product-show {
+  margin-top: 2em;
+}
+
+.product-title {
+  color: #996247;
+}
+
+.product-description {
+  margin: 1.5em auto 2em;
+  line-height: 1.6em;
+}
+
+.product-price-bgcolor {
+  background-color: #fcf8f7;
+  padding: 1.5em 1em;
+  margin-bottom: 1em;
+}
+.product-price {
+  font-size: 3em;
+  color: #DAC1BE;
+  font-weight: lighter;
+}
+
+
+.product-quantity {
+  margin: 1.5em auto;
+}
+
+
+.add-to-cart-button {
+  margin: 3em auto 1em;
+}
+
+// 点赞按钮
+.favorite_button {
+  line-height: 3em;
+}
