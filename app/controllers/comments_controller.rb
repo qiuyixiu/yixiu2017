@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :authenticate_user!, :only => [:new, :create, :edit, :destroy]
+  before_action :authenticate_user!, :only => [:create, :destroy]
 
   def new
     @product = Product.find(params[:product_id])
@@ -8,14 +8,13 @@ class CommentsController < ApplicationController
 
   def create
     @product = Product.find(params[:product_id])
-    @comment = Comment.new(comment_params)
-    @comment.product = @product
+    @comment = @product.comments.new(comment_params)
     @comment.user = current_user
 
     if @comment.save
-      redirect_to product_path(@product)
+      redirect_to product_path(@product), notice: "已评论"
     else
-      render :new
+      redirect_to product_path(@product), notice: "内容不能为空"
     end
   end
 
