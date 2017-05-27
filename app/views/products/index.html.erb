@@ -4,37 +4,37 @@
   <div class="pro-image">
       <h1 class="pro-title">真正的奢侈是能够自由选择</h1>
       <p class="pro-slogan">
-      Do it yourself, or do for you! 
+      Do it yourself, or do for you!
       </p>
     </div>
   <!-- <img src="https://ww1.sinaimg.cn/large/006tNbRwgy1fg00bbp06hj310o05iq91.jpg" alt="" class="bg-image"> -->
   <!-- <h1 class="text-center" style="font-family:Verdana">我们的商品</h1><br> -->
   <ul class="nav nav-tabs">
-        <div class="col-md-2 text-center">
+        <div class="col-md-2 text-center classify-text">
           <%= link_to  products_path do %>
           <br>
           <%= link_to "所有商品", products_path %>
           <% end %>
         </div>
-        <div class="col-md-2 text-center">
+        <div class="col-md-2 text-center classify-text">
           <%= link_to  products_path(:category => "成品" ) do %>
             <br>
             <%= link_to "成品", products_path(:category => "成品" ) %>
           <% end %>
         </div>
-        <div class="col-md-2 text-center">
+        <div class="col-md-2 text-center classify-text">
           <%= link_to  products_path(:category => "材料" ) do %>
             <br>
             <%= link_to "材料", products_path(:category => "材料" ) %>
           <% end %>
         </div>
-        <div class="col-md-2 text-center">
+        <div class="col-md-2 text-center classify-text">
           <%= link_to  products_path(:category => "工具" ) do %>
             <br>
             <%= link_to "工具", products_path(:category => "工具" ) %>
           <% end %>
         </div>
-        <div class="col-md-2 text-center">
+        <div class="col-md-2 text-center classify-text">
           <%= link_to  products_path(:category => "课程" ) do %>
             <br>
             <%= link_to "课程", products_path(:category => "课程" ) %>
@@ -45,7 +45,7 @@
              排序
              <span class="caret"></span>
            </button>
-           <ul class="reorder dropdown-menu ">
+           <ul class="reorder dropdown-menu">
              <li><%= link_to("价格从高到低", products_path(:order => "down_product.price")) %></li>
              <li><%= link_to("价格从低到高", products_path(:order => "up_product.price")) %></li>
              <li><%= link_to("发表时间", products_path ) %></li>

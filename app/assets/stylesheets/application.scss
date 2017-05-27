@@ -174,7 +174,7 @@
   //  }
 
    .index-title {
-     color:#666;
+     color:#996247;
      margin-bottom: 10px;
      font-size: 1.8em;
      font-weight: 700;
@@ -189,7 +189,7 @@
 
   .short-line{
       display: block;
-      background: #C07F6F;
+      background: #9A584C;
       border-style: none;
       border-radius: 0;
       margin-left: auto;
@@ -389,9 +389,9 @@
     }
 
     .men-zi {
-      line-height: 2.5em;
-      font-size: 1.2em;
-      color: #666;
+      line-height: 2em;
+      font-size: 1em;
+      color: #996247;
 
     }
 
@@ -420,7 +420,7 @@
     }
 
     .advantage-box >h3 {
-      color: #666;
+      color: #996247;
       letter-spacing: 1px;
       line-height: 22px;
       margin:15px;
@@ -428,9 +428,9 @@
     }
 
     .advantage-box >p {
-      line-height: 1.8em;
-      font-size: 1em;
-      color:#666;
+      line-height: 1.5em;
+      font-size: 0.9em;
+      color:#996247;
     }
 
     .round {
@@ -439,6 +439,15 @@
        height: 150px;
     }
 
+    .river-text {
+      color:#996247;
+      font-size:1.3em;
+    }
+
+    .text-small {
+      color:#996247;
+      font-size:0.9em;
+    }
 
  //欣赏成果 part4
  .we-do{
@@ -447,7 +456,10 @@
      background-color: #fcf7f2;
        }
 
-
+  .chengguo-text {
+    color:#996247;
+    font-size: 1.8em;
+  }
 
  // .product-ul {
  //   padding: 0 20px 0;
@@ -693,7 +705,7 @@ $pro-img:url(https://ww1.sinaimg.cn/large/006tNbRwgy1fg00bbp06hj310o05iq91.jpg);
 
 
 
-//产品页面
+
 //产品首图
 .pro-image {
   background-image:$pro-img;
@@ -723,6 +735,7 @@ $pro-img:url(https://ww1.sinaimg.cn/large/006tNbRwgy1fg00bbp06hj310o05iq91.jpg);
 }
 //产品首图结束
 
+//产品页面
 .product-box {
   text-align: center;
   padding: 0 0 100px 0;
@@ -747,3 +760,9 @@ $pro-img:url(https://ww1.sinaimg.cn/large/006tNbRwgy1fg00bbp06hj310o05iq91.jpg);
     line-height: 14px;
     min-height: 55px;
   }
+
+.classify-text >a {
+  color:#996247; //产品分类字体颜色
+  font-size: 18px;
+
+}
