@@ -6,10 +6,15 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-u = User.new
-u.email = "yixiu@yixiu.com"
-u.name = "管理员"
-u.password = "123456"
-u.password_confirmation = "123456"
-u.is_admin = true
-u.save
+if User.find_by(email: "yixiu@yixiu.com").nil?
+  a = User.new
+  a.email = "yixiu@yixiu.com"           # 可以改成自己的 email
+  a.nickname = "管理员"
+  a.password = "123456"                # 最少要六码
+  a.password_confirmation = "123456"   # 最少要六码
+  a.is_admin = true
+  a.save
+  puts "管理员 已经建立好了，帐号为#{a.email}, 密码为#{a.password}"
+else
+  puts "管理员 已经建立过了，脚本跳过该步骤。"
+end
