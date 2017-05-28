@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   post '/rate' => 'rater#create', :as => 'rate'
   root 'welcome#index'
-  devise_for :users
+  devise_for :users, :controllers => { :registrations => "users/registrations" }
   namespace :admin do
     resources :products do
       member do

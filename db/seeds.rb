@@ -8,6 +8,7 @@
 
 u = User.new
 u.email = "yixiu@yixiu.com"
+u.name = "管理员"
 u.password = "123456"
 u.password_confirmation = "123456"
 u.is_admin = true
