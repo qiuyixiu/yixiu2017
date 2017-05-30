@@ -753,29 +753,26 @@
 }
 
 
-$pro-img:url(https://ww1.sinaimg.cn/large/006tNbRwgy1fg00bbp06hj310o05iq91.jpg);
+$pro-img:url(http://oon3erbcp.bkt.clouddn.com/pro-image.jpg);
 
 
 
 
 //产品首图
 .pro-image {
-  float: center;
   background-image:$pro-img;
   background-repeat: no-repeat;
+  background-position: center center;
   background-size: cover;
   color:  #996247; //字体颜色
-  position: relative;
   height: 180px;
   letter-spacing: 2px;
   margin-top: -20px;
-  margin-left: -100px;
-  margin-right: -100px;
-
-
-
-
+  margin-left: -400px;
+  margin-right: -400px;
 }
+
+
 
 .pro-title {
     text-align: center;//文字
