@@ -293,14 +293,30 @@
           width: 32px; //定制图片宽度
           height: 32px; //定制图片高度
       }
-
+//商品分类导航栏设置
     .nav-product  {
       text-align: center;
       background-color: #9e6966;
       color:  white;
       padding-top: 20px;
       word-spacing :30px;
+      height: 60px;
+      line-height: 20px;
     }
+
+    .text-right {
+      float: right;
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+
+    .text-left {
+      float: left;
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+
+
 
 
 
@@ -732,6 +748,7 @@ $pro-img:url(https://ww1.sinaimg.cn/large/006tNbRwgy1fg00bbp06hj310o05iq91.jpg);
 
 //产品首图
 .pro-image {
+  float: center;
   background-image:$pro-img;
   background-repeat: no-repeat;
   background-size: cover;
@@ -740,6 +757,11 @@ $pro-img:url(https://ww1.sinaimg.cn/large/006tNbRwgy1fg00bbp06hj310o05iq91.jpg);
   height: 180px;
   letter-spacing: 2px;
   margin-top: -20px;
+  margin-left: -100px;
+  margin-right: -100px;
+
+
+
 
 }
 
