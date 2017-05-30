@@ -18,3 +18,33 @@ if User.find_by(email: "yixiu@yixiu.com").nil?
 else
   puts "管理员 已经建立过了，脚本跳过该步骤。"
 end
+
+
+Product.create!(title: "皮带",
+                 description: "棕色，方便松紧",
+                 category_id: "成品",
+                 price: 300,
+                 quantity: 10,
+                 image: open("http://oon3erbcp.bkt.clouddn.com/%E7%9A%AE%E5%B8%A6.jpeg")
+                 )
+Product.create!(title: "牛皮",
+                 description: "植糅革，会呼吸的皮革",
+                 category_id: "材料",
+                 price: 300,
+                 quantity: 10,
+                 image: open("http://oon3erbcp.bkt.clouddn.com/%E7%89%9B%E7%9A%AE1.jpg")
+                 )
+Product.create!(title: "裁皮刀",
+                 description: "裁皮利器",
+                 category_id: "工具",
+                 price: 50,
+                 quantity: 10,
+                 image: open("http://oon3erbcp.bkt.clouddn.com/%E8%A3%81%E7%9A%AE%E5%88%80.jpg")
+                 )
+Product.create!(title: "物序手工鞋课程",
+                  description: "邀你来做一双属于你自己的纯手工皮鞋",
+                  category_id: "课程",
+                  price: 2680,
+                  quantity: 10,
+                  image: open("http://oon3erbcp.bkt.clouddn.com/%E6%89%8B%E5%B7%A5%E9%9E%8B%E8%AF%BE%E7%A8%8B.jpeg")
+                  )
