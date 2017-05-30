@@ -2,7 +2,7 @@
   <div class="form-product">
     <%= f.input :title %>
     <%= f.input :description %>
-    <%= f.select :category_id, @categories %>
+    <%= select_tag(:category_id, options_for_select(@categories), :prompt => "Category") %>
     <%= f.input :quantity %>
     <%= f.input :price %>
     <%= f.input :image, as: :file %>
