@@ -310,6 +310,7 @@
       padding-right: 30px;
     }
 
+
     .text-left {
       float: left;
       padding-left: 30px;
@@ -593,6 +594,17 @@
 
 
 //footer
+
+#gotop {
+  float: center;
+  position: fixed;
+
+  bottom: 20px;
+  color: #F25F5C;
+  cursor: pointer;
+  display: none; /*默认先隐藏掉*/
+}
+
   .full {
     width: 100%;
     background-color: #FFDFD9;
