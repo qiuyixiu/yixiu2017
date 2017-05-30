@@ -9,7 +9,7 @@
 if User.find_by(email: "yixiu@yixiu.com").nil?
   a = User.new
   a.email = "yixiu@yixiu.com"           # 可以改成自己的 email
-  a.nickname = "管理员"
+  a.name = "管理员"
   a.password = "123456"                # 最少要六码
   a.password_confirmation = "123456"   # 最少要六码
   a.is_admin = true
