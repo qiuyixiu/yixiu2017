@@ -33,9 +33,9 @@
      <!-- 点赞按钮 -->
      <div class="col-sm-6 favorite_button">
       <% if !@product.users.include?(current_user) %>
-        <%= link_to("",favorite_product_path(@product),method: :post, class: "fa fa-thumbs-o-up fa-2x") %><%= @product.users.count %>
+        <%= link_to("",favorite_product_path(@product),method: :post, class: "fa fa-thumbs-o-up fa-2x") %>点赞人气<%= @product.users.count %>
       <% else %>
-        <%= link_to("", unfavorite_product_path(@product),method: :post,  class: "fa fa-thumbs-up fa-2x", style: "color:red") %><%= @product.users.count %>
+        <%= link_to("", unfavorite_product_path(@product),method: :post,  class: "fa fa-thumbs-up fa-2x", style: "color:red") %>点赞人气<%= @product.users.count %>
       <% end %>
     </div>
    </div>

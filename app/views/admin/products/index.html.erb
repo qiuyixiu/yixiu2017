@@ -8,6 +8,7 @@
     <tr>
       <th>#</th>
       <th width="220">Product Pic</th>
+      <th>分类</th>
       <th>Name</th>
       <th>Price</th>
       <th width="100"> Options</th>
@@ -28,6 +29,9 @@
             <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
           <% end %>
         <% end %>
+      </td>
+      <td>
+        <%= @category_id %>
       </td>
       <td>
         <%= product.title %>

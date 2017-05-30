@@ -1,90 +1,238 @@
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
 
-<div class="product-box">
-<div class="container">
-  <div class="pro-image">
-      <h1 class="pro-title">真正的奢侈是能够自由选择</h1>
-      <p class="pro-slogan">
-      Do it yourself, or do for you!
-      </p>
-    </div>
-  <!-- <img src="https://ww1.sinaimg.cn/large/006tNbRwgy1fg00bbp06hj310o05iq91.jpg" alt="" class="bg-image"> -->
-  <!-- <h1 class="text-center" style="font-family:Verdana">我们的商品</h1><br> -->
-  <ul class="nav nav-tabs">
-        <div class="col-md-2 text-center classify-text">
-          <%= link_to  products_path do %>
-          <br>
-          <%= link_to "所有商品", products_path %>
-          <% end %>
+  <!-- <div class="product-box">
+  <div class="container">
+      <div class="pro-image">
+        <h1 class="pro-title">真正的奢侈是能够自由选择</h1>
+        <p class="pro-slogan">
+        Do it yourself, or do for you!
+        </p>
+      </div> -->
+
+
+
+<body>
+
+  <div class="nav-product">
+    <div class="container-fluid">
+      <div class="row" >
+        <div class="col-md-10 text-left" >
+          商品分类：
+          <a href="#pg" style= "color:white">所有商品</a>
+          <a href="#cp" style= "color:white">成品</a>
+          <a href="#cl" style= "color:white">材料</a>
+          <a href="#gj" style= "color:white">工具</a>
+          <a href="#kc" style= "color:white">课程</a>
         </div>
-        <div class="col-md-2 text-center classify-text">
-          <%= link_to  products_path(:category => "成品" ) do %>
-            <br>
-            <%= link_to "成品", products_path(:category => "成品" ) %>
-          <% end %>
-        </div>
-        <div class="col-md-2 text-center classify-text">
-          <%= link_to  products_path(:category => "材料" ) do %>
-            <br>
-            <%= link_to "材料", products_path(:category => "材料" ) %>
-          <% end %>
-        </div>
-        <div class="col-md-2 text-center classify-text">
-          <%= link_to  products_path(:category => "工具" ) do %>
-            <br>
-            <%= link_to "工具", products_path(:category => "工具" ) %>
-          <% end %>
-        </div>
-        <div class="col-md-2 text-center classify-text">
-          <%= link_to  products_path(:category => "课程" ) do %>
-            <br>
-            <%= link_to "课程", products_path(:category => "课程" ) %>
-          <% end %>
-        </div>
-        <div class="dropdown clearfix pull-right">
-           <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
-             排序
+        <div class="dropdown clearfix col-md-2 text-right">
+           <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" style= "color:#996247">
+             商品排序
              <span class="caret"></span>
            </button>
-           <ul class="reorder dropdown-menu">
-             <li><%= link_to("价格从高到低", products_path(:order => "down_product.price")) %></li>
-             <li><%= link_to("价格从低到高", products_path(:order => "up_product.price")) %></li>
-             <li><%= link_to("发表时间", products_path ) %></li>
+           <ul class="reorder dropdown-menu" >
+             <li><%= link_to("价格从高到低", products_path(:order => "down_product.price"), :style => "color:#996247")  %></li>
+             <li><%= link_to("价格从低到高", products_path(:order => "up_product.price"), :style => "color:#996247") %></li>
+             <li><%= link_to("发表时间", products_path, :style => "color:#996247" ) %></li>
            </ul>
         </div>
-  </ul>
-
-
-<div class="row">
-
-  <% @products.each do |product| %>
-    <div class="col-xs-12 col-sm-4 col-md-3 product-content">
-      <%= link_to product_path(product) do %>
-        <% if product.image.present? %>
-          <%= image_tag(product.image.thumb.url, class: "thumbnails") %>
-        <% else %>
-          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
-        <% end %>
-      <% end %>
-      <div class="product-info">
-        <%= product.title %> ￥ <%= product.price %>
-
-      <% if !product.users.include?(current_user) %>
-        <%= link_to("",favorite_product_path(product),method: :post, class: "fa fa-thumbs-o-up fa-2x") %><%= product.users.count %>
-
-      <% else %>
-        <%= link_to("", unfavorite_product_path(product),method: :post,  class: "fa fa-thumbs-up fa-2x", style: "color:red") %><%= product.users.count %>
-      <% end %>
       </div>
     </div>
-  <% end %>
+  </div>
+  <br>
 
-</div>
+
+  <div id="pg" class="container text-center">
+    <h3 class="river-text">所有商品</h3>
+    <p class="text-small">总有适合你的</p>
+    <div class="short-line"></div>
+    <br>
+    <div class="row">
+      <% @products.each do |product| %>
+        <div class="col-xs-6 col-md-4 product-content">
+          <%= link_to product_path(product) do %>
+            <% if product.image.present? %>
+              <%= image_tag(product.image.thumb.url, class: "thumbnails") %>
+            <% else %>
+              <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+            <% end %>
+          <% end %>
+          <br><br>
+          <div class="product-info">
+            <%= product.title %> ￥ <%= product.price %>
+            <br>
+            <% if !product.users.include?(current_user) %>
+              <%= link_to("",favorite_product_path(product),method: :post, class: "fa fa-thumbs-o-up fa-2x") %>点赞人气<%= product.users.count %>
+
+            <% else %>
+              <%= link_to("", unfavorite_product_path(product),method: :post,  class: "fa fa-thumbs-up fa-2x", style: "color:red") %>点赞人气<%= product.users.count %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <br>
+  <div class="long-line"></div>
+
+  <!-- 成品展示 -->
+  <div id="cp" class="container text-center">
+    <h3 class="river-text">成品</h3>
+    <p class="text-small">Do for you</p>
+    <div class="short-line"></div>
+    <br>
+    <div class="row">
+      <% @products.each do |product| %>
+        <% if product.category.name == "成品"%>
+          <div class="col-xs-6 col-md-4 product-content">
+            <%= link_to product_path(product) do %>
+
+              <% if product.image.present? %>
+                <%= image_tag(product.image.thumb.url, class: "thumbnails") %>
+              <% else %>
+                <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+              <% end %>
+            <% end %>
+          <br><br>
+          <div class="product-info">
+            <%= product.title %> ￥ <%= product.price %>
+            <br>
+            <% if !product.users.include?(current_user) %>
+              <%= link_to("",favorite_product_path(product),method: :post, class: "fa fa-thumbs-o-up fa-2x") %>点赞人气<%= product.users.count %>
+
+            <% else %>
+              <%= link_to("", unfavorite_product_path(product),method: :post,  class: "fa fa-thumbs-up fa-2x", style: "color:red") %>点赞人气<%= product.users.count %>
+            <% end %>
+          </div>
+        </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <br>
+  <div class="long-line"></div>
+
+  <!-- 材料展示 -->
+  <div id="cl" class="container text-center">
+    <h3 class="river-text">材料</h3>
+    <p class="text-small">我们只用好的</p>
+    <div class="short-line"></div>
+    <br>
+    <div class="row">
+      <% @products.each do |product| %>
+        <% if product.category.name == "材料"%>
+          <div class="col-xs-6 col-md-4 product-content">
+            <%= link_to product_path(product) do %>
+
+              <% if product.image.present? %>
+                <%= image_tag(product.image.thumb.url, class: "thumbnails") %>
+              <% else %>
+                <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+              <% end %>
+            <% end %>
+          <br><br>
+          <div class="product-info">
+            <%= product.title %> ￥ <%= product.price %>
+            <br>
+            <% if !product.users.include?(current_user) %>
+              <%= link_to("",favorite_product_path(product),method: :post, class: "fa fa-thumbs-o-up fa-2x") %>点赞人气<%= product.users.count %>
+
+            <% else %>
+              <%= link_to("", unfavorite_product_path(product),method: :post,  class: "fa fa-thumbs-up fa-2x", style: "color:red") %>点赞人气<%= product.users.count %>
+            <% end %>
+          </div>
+        </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <br>
+  <div class="long-line"></div>
+
+  <!-- 工具展示 -->
+  <div id="gj" class="container text-center">
+    <h3 class="river-text">工具</h3>
+    <p class="text-small">欲善其事，先利其器</p>
+    <div class="short-line"></div>
+    <br>
+    <div class="row">
+      <% @products.each do |product| %>
+        <% if product.category.name == "工具"%>
+          <div class="col-xs-6 col-md-4 product-content">
+            <%= link_to product_path(product) do %>
+
+              <% if product.image.present? %>
+                <%= image_tag(product.image.thumb.url, class: "thumbnails") %>
+              <% else %>
+                <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+              <% end %>
+            <% end %>
+          <br><br>
+          <div class="product-info">
+            <%= product.title %> ￥ <%= product.price %>
+            <br>
+            <% if !product.users.include?(current_user) %>
+              <%= link_to("",favorite_product_path(product),method: :post, class: "fa fa-thumbs-o-up fa-2x") %>点赞人气<%= product.users.count %>
+
+            <% else %>
+              <%= link_to("", unfavorite_product_path(product),method: :post,  class: "fa fa-thumbs-up fa-2x", style: "color:red") %>点赞人气<%= product.users.count %>
+            <% end %>
+          </div>
+        </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <br>
+  <div class="long-line"></div>
+
+  <!-- 课程展示 -->
+  <div id="kc" class="container text-center">
+    <h3 class="river-text">课程</h3>
+    <p class="text-small">大师在指引你</p>
+    <div class="short-line"></div>
+    <br><br>
+    <div class="row">
+      <% @products.each do |product| %>
+        <% if product.category.name == "课程"%>
+          <div class="col-xs-6 col-md-4 product-content">
+            <%= link_to product_path(product) do %>
+
+              <% if product.image.present? %>
+                <%= image_tag(product.image.thumb.url, class: "thumbnails") %>
+              <% else %>
+                <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+              <% end %>
+            <% end %>
+          <br>
+          <div class="product-info">
+            <%= product.title %> ￥ <%= product.price %>
+            <br>
+            <% if !product.users.include?(current_user) %>
+              <%= link_to("",favorite_product_path(product),method: :post, class: "fa fa-thumbs-o-up fa-2x") %>点赞人气<%= product.users.count %>
+
+            <% else %>
+              <%= link_to("", unfavorite_product_path(product),method: :post,  class: "fa fa-thumbs-up fa-2x", style: "color:red") %>点赞人气<%= product.users.count %>
+            <% end %>
+          </div>
+        </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+</body>
 
 
-<div class="text-center">
+
+
+
+
+
+
+
+<!-- <div class="text-center">
 
     <%= will_paginate @products, renderer: BootstrapPagination::Rails %>
 
-</div>
-</div>
-</div>
+</div> -->
