@@ -18,4 +18,6 @@ class Product < ApplicationRecord
   has_many :users, through: :favorites, source: :user
   has_many :comments
   belongs_to :category
+  has_many :photos
+  accepts_nested_attributes_for :photos
 end

@@ -5,11 +5,9 @@
     <%= select_tag(:category_id, options_for_select(@categories), :prompt => "Category") %>
     <%= f.input :quantity %>
     <%= f.input :price %>
-    <%= f.input :image, as: :file %>
+    <%= f.label :avatar %><br>
+    <%= f.file_field :avatar, :multiple => true, name: "photos[avatar][]" %>
     <%= f.input :is_hidden %>
   </div>
   <%= f.submit "Submit", class: "btn btn-primary", data: { disable_with: "Submiting..."} %>
 <% end %>
-
-
- 
