@@ -1,65 +1,72 @@
 <div class="container product-show">
-<div class="row">
-  <div class="col-md-5">
-    <% if @product.image.present? %>
-      <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
-    <% else %>
-      <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
-    <% end %>
-  </div>
-  <!-- 商品信息 -->
-  <div class="col-md-7">
-    <h2 class="product-title"> <%= @product.title %> </h2>
-    <div class="product-description">
-      <p>
-        <%= simple_format(@product.description)%>
-      </p>
-    </div>
-    <div class="product-quantity"> 数量 : <%= @product.quantity %> </div>
-
-    <div class="product-price-bgcolor">
-    <div class="product-price"> ￥ <%= @product.price %> </div>
-    </div>
-
-    <div class="add-to-cart-button row">
-      <div class="col-sm-6">
-      <% if @product.quantity.present? && @product.quantity > 0 %>
-        <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post,
-                   class: "btn btn-primary btn-lg btn-danger") %>
+  <div class="row">
+    <div class="col-md-5">
+      <% if @product.image.present? %>
+        <%= image_tag(@product.image.medium.url, class: "thumbnail img-responsive") %>
       <% else %>
-        已销售一空，无法购买
+        <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
       <% end %>
     </div>
-     <!-- 点赞按钮 -->
-     <div class="col-sm-6 favorite_button">
-      <% if !@product.users.include?(current_user) %>
-        <%= link_to("",favorite_product_path(@product),method: :post, class: "fa fa-thumbs-o-up fa-2x") %>点赞人气<%= @product.users.count %>
-      <% else %>
-        <%= link_to("", unfavorite_product_path(@product),method: :post,  class: "fa fa-thumbs-up fa-2x", style: "color:red") %>点赞人气<%= @product.users.count %>
-      <% end %>
-    </div>
-   </div>
-  </div>
+    <!-- 商品信息 -->
+    <div class="col-md-7">
+      <h2 class="product-title"> <%= @product.title %> </h2>
 
+      <div class="product-quantity"> 数量 : <%= @product.quantity %> </div>
 
-    <table class="table">
-      <thead>
-        <tr>
-          <th>评论内容</th>
-          <th>发表用户</th>
-          <th>发表时间</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @comments.each do |comment| %>
-          <tr>
-            <td><%= comment.content %></td>
-            <td><%= comment.user.email %></td>
-            <td><%= comment.created_at %></td>
-          </tr>
+      <div class="product-price-bgcolor">
+      <div class="product-price"> ￥ <%= @product.price %> </div>
+      </div>
+
+      <div class="add-to-cart-button row">
+        <div class="col-sm-6">
+        <% if @product.quantity.present? && @product.quantity > 0 %>
+          <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post,
+                     class: "btn btn-primary btn-lg btn-danger") %>
+        <% else %>
+          已销售一空，无法购买
         <% end %>
-      </tbody>
-    </table>
-    <%= render "comments/form" %>
+      </div>
+       <!-- 点赞按钮 -->
+       <div class="col-sm-6 favorite_button">
+        <% if !@product.users.include?(current_user) %>
+          <%= link_to("",favorite_product_path(@product),method: :post, class: "fa fa-thumbs-o-up fa-2x") %>点赞人气<%= @product.users.count %>
+        <% else %>
+          <%= link_to("", unfavorite_product_path(@product),method: :post,  class: "fa fa-thumbs-up fa-2x", style: "color:red") %>点赞人气<%= @product.users.count %>
+        <% end %>
+      </div>
+     </div>
+    </div>
+
+    <div class="col-md-10 col-md-offset-2">
+       <ul class="nav nav-tabs">
+         <li class="active"><a data-toggle="tab" href="#home">商品详情</a></li>
+         <li><a data-toggle="tab" href="#menu1">用户评论</a></li>
+      </ul>
+
+       <div class="tab-content">
+         <div id="home" class="tab-pane fade in active">
+           <div class="product-description">
+             <p>
+               <%= simple_format(@product.description)%>
+             </p>
+           </div>
+         </div>
+         <div id="menu1" class="tab-pane fade">
+           <table class="table">
+             <tbody>
+               <% @comments.each do |comment| %>
+                 <tr>
+                   <td><%= comment.user.name %></td>
+                   <td><%= comment.content %></td>
+                   <td><%= comment.created_at %></td>
+                 </tr>
+               <% end %>
+             </tbody>
+           </table>
+           <%= render "comments/form" %>
+         </div>
+      </div>
+    </div>
+
   </div>
 </div>
