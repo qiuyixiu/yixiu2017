@@ -829,6 +829,50 @@ $pro-img:url(http://oon3erbcp.bkt.clouddn.com/pro-image.jpg);
 
 //商品详情页
 
+/*产品详情页面多个图片信息*/
+.location {
+	line-height: 30px;
+	padding-bottom: 3px;
+}
+
+.productDetail {
+	width: 1200px;
+	margin: 20px auto;
+	height: 518px;
+}
+
+.productDetail img {
+  width: 100%;
+  height: 100%;
+}
+
+.productDetail-left-bigImage {
+	width: 580px;
+	height: 580px;
+}
+
+.productDetail-left-imageList {
+	margin-top: 15px;
+}
+
+.productDetail-left-imageList-item {
+	float: left; /*虽然我们是block元素，但是我们还是想在同一行呀，那就用float吧*/
+	width: 130px;
+	height: 130px;
+	margin-left: 8px;
+  margin-right: 8px;
+}
+
+.productDetail-left-imageList-lastItem {
+	margin-right: 0;
+}
+
+//产品详情、用户评论设置
+.product-p {
+  margin-top: 100px;
+  color: #996247;
+}
+
 // 页面头部微调
 .product-show {
   margin-top: 2em;
@@ -857,6 +901,7 @@ $pro-img:url(http://oon3erbcp.bkt.clouddn.com/pro-image.jpg);
 
 .product-quantity {
   margin: 1.5em auto;
+  color: #DAC1BE;
 }
 
 

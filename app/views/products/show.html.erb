@@ -1,29 +1,63 @@
+<div class="nav-product">
+  <div class="container-fluid text-left">
+    <div class="row" >
+      <p class="location"><%= link_to("所有商品", products_path, style: "color:white")%> >
+        <% Category.all.each do |category| %>
+              <% if @product.category.name == category.name %>
+            <%= link_to category.name, products_path(category: category.name), class: "link", style: "color:white" %>
+        <% end %>
+        <% end %>
+        > <%= @product.title %>
+      </p>
+    </div>
+  </div>
+</div>
+<br>
+
 <div class="container product-show">
   <div class="row">
-    <div class="col-md-5">
+    <!-- 大图 -->
+    <div class="col-md-7">
       <% if @photos.present? %>
-        <% @photos.each_with_index do |p, index| %>
-          <% if index == 0 %>
-            <%= image_tag p.avatar.medium.url %>
-            <div style="letter-spacing: -8px">
-          <% else %>
-            <%= image_tag p.avatar.thumb.url %>
-          <% end %>
-        <% end %>
+        <div class="productDetail">
+          <div class="productDetail-left">
+            <div class="productDetail-left-bigImage">
+              <%= image_tag(@product.photos[0].avatar.medium.url, class: "thumbnail img-responsive") %>
+            </div>
+            <!-- 下方缩略图-->
+            <div class="productDetail-left-imageList ">
+              <div class="productDetail-left-imageList-item">
+                <%= image_tag(@product.photos[0].avatar.medium.url, class: "thumbnail img-responsive")  %>
+              </div>
+              <div class="productDetail-left-imageList-item">
+                <%= image_tag(@product.photos[1].avatar.medium.url, class: "thumbnail img-responsive")  %>
+              </div>
+              <div class="productDetail-left-imageList-item">
+                <%= image_tag(@product.photos[2].avatar.medium.url, class: "thumbnail img-responsive")  %>
+              </div>
+              <div class="productDetail-left-imageList-item">
+                <%= image_tag(@product.photos[3].avatar.medium.url, class: "thumbnail img-responsive")  %>
+              </div>
+            </div>
+          </div>
         </div>
       <% else %>
           <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
       <% end %>
     </div>
+    <br><br><br>
+
+
+
     <!-- 商品信息 -->
-    <div class="col-md-7">
+    <div class="col-md-5">
       <h2 class="product-title"> <%= @product.title %> </h2>
-
-      <div class="product-quantity"> 数量 : <%= @product.quantity %> </div>
-
       <div class="product-price-bgcolor">
       <div class="product-price"> ￥ <%= @product.price %> </div>
       </div>
+      <div class="product-quantity"> 库存 : <%= @product.quantity %> </div>
+
+      <br><br><br><br>
 
       <div class="add-to-cart-button row">
         <div class="col-sm-6">
@@ -45,12 +79,12 @@
      </div>
     </div>
 
-    <div class="col-md-10 col-md-offset-2">
+
+    <div class="product-p col-md-10 col-md-offset-2">
        <ul class="nav nav-tabs">
          <li class="active"><a data-toggle="tab" href="#home">商品详情</a></li>
          <li><a data-toggle="tab" href="#menu1">用户评论</a></li>
       </ul>
-
        <div class="tab-content">
          <div id="home" class="tab-pane fade in active">
            <div class="product-description">
@@ -59,7 +93,7 @@
              </p>
              <% if @photos.present? %>
                <% @photos.each_with_index do |p, index| %>
-                   <%= image_tag p.avatar.medium.url %>
+                   <%= image_tag p.avatar.medium.url, class: "thumbnail img-responsive" %>
                <% end %>
              <% else %>
                  <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
