@@ -51,7 +51,7 @@
         <div class="col-xs-6 col-md-4 product-content">
           <%= link_to product_path(product) do %>
             <% if product.photos.present? %>
-              <%= image_tag(product.photos[0].avatar.thumb.url, class: "thumbnail") %>
+              <%= image_tag(product.photos[0].avatar.medium.url, class: "thumbnail") %>
             <% else %>
               <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
             <% end %>
@@ -87,7 +87,7 @@
             <%= link_to product_path(product) do %>
 
               <% if product.photos.present? %>
-                <%= image_tag(product.photos[0].avatar.thumb.url, class: "thumbnail") %>
+                <%= image_tag(product.photos[0].avatar.medium.url, class: "thumbnail") %>
               <% else %>
                 <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
               <% end %>
@@ -124,7 +124,7 @@
             <%= link_to product_path(product) do %>
 
               <% if product.photos.present? %>
-                <%= image_tag(product.photos[0].avatar.thumb.url, class: "thumbnail") %>
+                <%= image_tag(product.photos[0].avatar.medium.url, class: "thumbnail") %>
               <% else %>
                 <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
               <% end %>
@@ -161,7 +161,7 @@
             <%= link_to product_path(product) do %>
 
               <% if product.photos.present? %>
-                <%= image_tag(product.photos[0].avatar.thumb.url, class: "thumbnail") %>
+                <%= image_tag(product.photos[0].avatar.medium.url, class: "thumbnail") %>
               <% else %>
                 <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
               <% end %>
@@ -198,7 +198,7 @@
             <%= link_to product_path(product) do %>
 
               <% if product.photos.present? %>
-                <%= image_tag(product.photos[0].avatar.thumb.url, class: "thumbnail") %>
+                <%= image_tag(product.photos[0].avatar.medium.url, class: "thumbnail") %>
               <% else %>
                 <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
               <% end %>
