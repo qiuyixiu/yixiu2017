@@ -61,17 +61,16 @@
 
       <div class="add-to-cart-button row">
         <div class="col-sm-6">
-          <div>
-          <%= link_to("-", "", id: "quantity-minus", class: "quantity-minus btn btn-default disabled", style: "color:#996247") %>
-            <input type="text" name="quantity" value="1" id="quantity-input" class="quantity-input">
-          <%= link_to("+", "", id: "quantity-plus", class: "quantity-plus btn btn-default #{@product.quantity <= 1 ? 'disabled' : ''}", style: "color:#996247") %>
-        </div>
-        <% if @product.quantity.present? && @product.quantity > 0 %>
-          <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post,
-                     class: "btn btn-primary btn-lg btn-danger") %>
-        <% else %>
-          已销售一空，无法购买
-        <% end %>
+          <%= simple_form_for @product, method: :post, url: add_to_cart_product_path(@product) do |f| %>
+           <div class="buy-quantity">
+            <%= link_to("-", "", id: "quantity-minus", class: "quantity-minus btn btn-default disabled", style: "color:#DAC1BE") %>
+            <%= f.input_field "", name: "quantity", value: '1', id: "quantity-input", class: "quantity-input" %>
+            <%= link_to("+", "", id: "quantity-plus", class: "quantity-plus btn btn-default #{@product.quantity <= 1 ? 'disabled' : ''}", style: "color:#DAC1BE") %>
+           </div>
+           <button type="submit" class="btn btn-danger <%= @product.quantity == 0 ? 'disabled' : '' %>">
+            <%= fa_icon("cart-arrow-down", text: "加入购物车") %>
+           </button>
+          <% end %>
       </div>
        <!-- 点赞按钮 -->
        <div class="col-sm-6 favorite_button">
@@ -83,6 +82,7 @@
       </div>
      </div>
     </div>
+
 
 
     <div class="product-p col-md-10 col-md-offset-2">
