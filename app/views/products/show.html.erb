@@ -61,6 +61,11 @@
 
       <div class="add-to-cart-button row">
         <div class="col-sm-6">
+          <div>
+          <%= link_to("-", "", id: "quantity-minus", class: "quantity-minus btn btn-default disabled", style: "color:#996247") %>
+            <input type="text" name="quantity" value="1" id="quantity-input" class="quantity-input">
+          <%= link_to("+", "", id: "quantity-plus", class: "quantity-plus btn btn-default #{@product.quantity <= 1 ? 'disabled' : ''}", style: "color:#996247") %>
+        </div>
         <% if @product.quantity.present? && @product.quantity > 0 %>
           <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post,
                      class: "btn btn-primary btn-lg btn-danger") %>
