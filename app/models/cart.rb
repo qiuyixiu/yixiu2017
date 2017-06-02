@@ -34,4 +34,12 @@ class Cart < ApplicationRecord
     cart_item.quantity += quantity
     cart_item.save
   end
+
+  def total_quantity
+    sum = 0
+    cart_items.each do |cart_item|
+      sum += cart_item.quantity
+    end
+    sum
+  end
 end
