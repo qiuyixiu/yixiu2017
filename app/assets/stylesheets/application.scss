@@ -913,3 +913,65 @@ $pro-img:url(http://oon3erbcp.bkt.clouddn.com/pro-image.jpg);
 .favorite_button {
   line-height: 3em;
 }
+
+
+
+
+
+
+//购物车页面
+// 整体样式
+.shopping-cart {
+  margin-top: 10px;
+  }
+
+// 清空购物车按钮
+  .clean_carts {
+    padding-top: 20px;
+
+  }
+
+// 列表表头样式
+.cart-column-head {
+  background:#9f6965;
+  padding: 20px 0 20px 0;
+  margin-bottom: 20px;
+  color: #fff;
+  label {
+    text-align: center;
+    line-height: 4px;
+  }
+}
+
+// 购物车商品
+.product-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    height: auto;
+    width: 80px;
+  }
+}
+
+.product-cart {
+  font-size: 1em;
+  color:#666;
+}
+
+.cart-zi {
+  color:#996247;
+  font-size: 1.7em;
+}
+
+// 合计样式
+.product-price-total {
+  font-size: 2em;
+  color: #9f6965;
+  font-weight: lighter;
+}
+
+// 提交按钮样式
+.cart-buy-buttom {
+  margin: 1.2em auto 3em;
+}
