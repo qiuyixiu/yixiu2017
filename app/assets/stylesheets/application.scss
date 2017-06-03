@@ -621,7 +621,7 @@
 .footer {
 	background: #9A584C;
 	height: auto;
-	padding-bottom: 30px;
+	padding-bottom: 25px;
 	// position: relative;
 
 	width: 100%;
@@ -639,7 +639,7 @@
 	border-bottom: 1px solid #FFF2F0;
 	color: #FFF2F0;
 	font-size: 18px;
-	font-weight: 600;
+	// font-weight: 600;
 	line-height: 27px;
 	padding: 5px 0 10px;
 	text-transform: uppercase;
@@ -1008,4 +1008,8 @@ $pro-img:url(http://oon3erbcp.bkt.clouddn.com/pro-image.jpg);
 
 .form-group {
   color: #666;
+}
+
+.order-form {
+  margin-bottom: 80px;
 }
