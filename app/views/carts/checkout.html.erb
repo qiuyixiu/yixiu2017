@@ -65,17 +65,18 @@
 
    <!-- 填写的信息表单 -->
   <div class="col-md-6 col-md-offset-3 order-form-group">
-    <h2 class="order-message"> 订单资讯 </h2>
+    <h2 class="order-message"> 订单详情 </h2>
    <hr>
+   <div class="checkout_form">
     <div class="order-form">
       <%= simple_form_for @order do |f| %>
-          <h4> 订购资讯</h4>
+          <h4> 订购详情</h4>
           <div class="form-group">
             <%= f.input :billing_name, :label => "订购人姓名" %>
             <%= f.input :billing_address, :label => "订购人地址" %>
           </div>
 
-          <h4> 收货资讯</h4>
+          <h4> 收货详情</h4>
           <div class="form-group">
             <%= f.input :shipping_name, :label => "收货人姓名" %>
           </div>
@@ -88,6 +89,7 @@
                         data: { disable_with: "Submitting..." } %>
         </div>
       <% end %>
+     </div>
     </div>
   </div>
 </div>
