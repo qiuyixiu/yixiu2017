@@ -207,12 +207,12 @@
       background: #9A584C;
       border-style: none;
       border-radius: 0;
-      margin-left: auto;
-      margin-right: auto;
+      // margin-left: auto;
+      // margin-right: auto;
       margin-top: 12px;
       margin-bottom: 20px;
       z-index: 53;
-      width: 100%;
+      // width: 100%;
       height: 1px;
       position: relative;
   }
@@ -298,9 +298,9 @@
       text-align: center;
       background-color: #9e6966;
       color:  white;
-      padding-top: 20px;
+      padding-top: 5px;
       word-spacing :30px;
-      height: 60px;
+      height: 40px;
       line-height: 20px;
     }
 
@@ -308,6 +308,7 @@
       float: right;
       padding-left: 30px;
       padding-right: 30px;
+
     }
 
 
@@ -315,6 +316,7 @@
       float: left;
       padding-left: 30px;
       padding-right: 30px;
+      padding-top: 5px;
     }
 
 
@@ -768,8 +770,6 @@ $pro-img:url(http://oon3erbcp.bkt.clouddn.com/pro-image.jpg);
   height: 180px;
   letter-spacing: 2px;
   margin-top: -20px;
-  margin-left: -400px;
-  margin-right: -400px;
 }
 
 
@@ -823,7 +823,7 @@ $pro-img:url(http://oon3erbcp.bkt.clouddn.com/pro-image.jpg);
 
 }
 
-.thumbnails:hover {
+.thumbnail:hover {
   box-shadow: 5px 0px 40px #996247;
 }
 
