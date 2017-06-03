@@ -1,67 +1,85 @@
-<div class="row">
-  <div class="col-md-12">
+<div class="container">
+ <div class="row">
+  <!-- <div class="col-md-12"> -->
 
-    <h2> 订单明细 </h2>
+    <h2 class="cart-zi"> 订单明细 </h2>
 
-    <table class="table table-bordered">
-      <thead>
-        <tr>
-          <th width="80">商品明细</th>
-          <th>单价</th>
-        </tr>
-      </thead>
-      <tbody>
+    <div class="shopping-cart">
+      <div class="cart-column-head center-block">
+        <label class="col-xs-3 product-title-cart">名称</label>
+        <label class="col-xs-3 product-price-cart">单价</label>
+        <label class="col-xs-3 product-quantity-cart">数量</label>
+        <label class="col-xs-3 product-line-price-cart">小计</label>
+     </div>
+
 
         <% @product_lists.each do |product_list| %>
-          <tr>
-            <td>
-              <%= product_list.product_name %>
-            </td>
-            <td>
-              <%= product_list.product_price %>
-            </td>
-          </tr>
-        <% end %>
+         <div class="product_list row text-center">
+           <!-- 名称 -->
+           <div class="col-xs-3 product-cart">
+            <%= product_list.product_name %>
+           </div>
 
-      </tbody>
-    </table>
+           <!-- 单价 -->
+          <div class="col-xs-3 product-cart">
+            <%= product_list.product_price %> RMB
+          </div>
 
-    <div class="total clearfix">
-      <span class="pull-right">
-        总计 <%= @order.total %> CNY
-      </span>
-    </div>
+          <!-- 数量 -->
+          <div class="col-xs-3 product-cart">
+              <%= product_list.quantity %>
+          </div>
 
-    <hr>
+          <!-- 总价 -->
+          <div class="col-xs-3 product-cart">
+            <%= product_list.product_price * product_list.quantity %> RMB
+           </div>
+          </div>
+          <hr>
+         <% end %>
+        </div>
 
-    <h2> 寄送资讯 </h2>
 
-    <table class="table table-striped table-bordered">
-      <tbody>
-        <tr>
-          <td>
-            订购人
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <%= @order.billing_name %> - <%= @order.billing_address %>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            收件人
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <%= @order.shipping_name  %> - <%= @order.shipping_address %>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+          <!-- 合计 -->
+          <div class="container">
+            <span class="pull-right text-center product-price-total">
+              总计: <%= @order.total %> RMB
+            </span>
+          </div>
+        </div>
 
-    <div class="pull-left">
+   <!-- 寄送详情表 -->
+    <div class="row order-form-group">
+          <div class="col-md-6 col-md-offset-3">
+            <h3 class="order-message">寄送详情</h3>
+            <hr>
+
+            <div class="order-form">
+              <%= simple_form_for @order do |f| %>
+
+                <h4>订购详情</h4>
+                <div class="form-group">
+                  <br>
+                  <p><strong> 订购人姓名：</strong><%= @order.billing_name %></p>
+                  <p><strong> 订购人地址：</strong><%= @order.billing_address %></p>
+                </div>
+
+                <br>
+                <h4>收货详情</h4>
+                <div class="form-group">
+                  <br>
+                  <p><strong> 收货人姓名：</strong><%= @order.shipping_name %></p>
+                  <p><strong> 收货人地址：</strong><%= @order.shipping_address %></p>
+                </div>
+
+              <% end %>
+            </div>
+          </div>
+
+   <!-- 列表之外 -->
+    <div class="col-md-6 col-md-offset-3 order_footer">
+      <hr>
+    <div>
       <% if @order.order_placed? || @order.paid? %>
         <%= link_to("申请取消订单", apply_to_cancel_order_path(@order), method: :post, class: "btn btn-info") %>
       <% end %>
@@ -76,6 +94,6 @@
       <p class="text-center">此订单已完成付款</p>
     <% end %>
 
-
+   </div>
   </div>
 </div>
