@@ -98,13 +98,15 @@
              <p>
                <%= simple_format(@product.description)%>
              </p>
-             <% if @photos.present? %>
-               <% @photos.each_with_index do |p, index| %>
-                   <%= image_tag p.avatar.medium.url, class: "thumbnail img-responsive" %>
+             <div>
+               <% if @photos.present? %>
+                 <% @photos.each_with_index do |p, index| %>
+                     <%= image_tag p.avatar.medium.url, class: "thumbnail img-responsive" %>
+                 <% end %>
+               <% else %>
+                   <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
                <% end %>
-             <% else %>
-                 <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
-             <% end %>
+             </div>
            </div>
          </div>
          <div id="menu1" class="tab-pane fade">
@@ -123,28 +125,29 @@
          </div>
       </div>
     </div>
-    <div class="product-p product-b col-md-3">
-    <h2 class=text-center>人气商品</h2>
 
-    <ul class="productList clearfix pb20">
-      <% Product.all.includes(:photos).sort_by {|product| product.favorites.count}.reverse.each_with_index do |product, index| %>
-        <%= link_to product_path(product) do %>
-              <% if product.photos.present? %>
-                <%= image_tag(product.photos[0].avatar.medium.url, class: "thumbnail img-responsive") %>
-              <% else %>
-                <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
-              <% end %>
+    <div class="product-p product-b col-md-3">
+      <h4 class=text-center>人气商品</h4>
+      <hr>
+      <div>
+        <% Product.all.includes(:photos).sort_by {|product| product.favorites.count}.reverse.each_with_index do |product, index| %>
+          <%= link_to product_path(product) do %>
+                <% if product.photos.present? %>
+                  <%= image_tag(product.photos[0].avatar.medium.url, class: "thumbnail img-responsive") %>
+                <% else %>
+                  <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
+                <% end %>
+          <% end %>
+          <div class="pull-left"> ￥ <%= product.price %> </div>
+          <div class="pull-right">
+           <% if !product.users.include?(current_user) %>
+             <%= link_to("",favorite_product_path(@product),method: :post, class: "fa fa-thumbs-o-up fa-2x") %>点赞人气<%= product.users.count %>
+           <% else %>
+             <%= link_to("", unfavorite_product_path(@product),method: :post,  class: "fa fa-thumbs-up fa-2x", style: "color:red") %>点赞人气<%= product.users.count %>
+           <% end %>
+         </div>
         <% end %>
-      <% end %>
-      <div class="price pull-left"> ￥ <%= @product.price %> </div>
-      <div class="button pull-right">
-       <% if !@product.users.include?(current_user) %>
-         <%= link_to("",favorite_product_path(@product),method: :post, class: "fa fa-thumbs-o-up fa-2x") %>点赞人气<%= @product.users.count %>
-       <% else %>
-         <%= link_to("", unfavorite_product_path(@product),method: :post,  class: "fa fa-thumbs-up fa-2x", style: "color:red") %>点赞人气<%= @product.users.count %>
-       <% end %>
-       </div>
-    </ul>
+      </div>
      </div>
 
     </div>
