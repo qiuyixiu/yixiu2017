@@ -73,16 +73,24 @@
             <%= fa_icon("cart-arrow-down", text: "加入购物车") %>
            </button>
           <% end %>
-      </div>
+          <br>
+          <%= link_to carts_path do %>
+            <button type="submit" class="btn btn-warning <%= @product.quantity == 0 ? 'disabled' : '' %>">
+             <%= fa_icon("cart-arrow-down", text: "直接去结帐") %>
+            </button>
+          <% end %>
+        </div>
        <!-- 点赞按钮 -->
-       <div class="col-sm-6 favorite_button">
-        <% if !@product.users.include?(current_user) %>
-          <%= link_to("",favorite_product_path(@product),method: :post, class: "fa fa-thumbs-o-up fa-2x") %>点赞人气<%= @product.users.count %>
-        <% else %>
-          <%= link_to("", unfavorite_product_path(@product),method: :post,  class: "fa fa-thumbs-up fa-2x", style: "color:red") %>点赞人气<%= @product.users.count %>
-        <% end %>
+        <div class="col-sm-6 favorite_button">
+          <% if !@product.users.include?(current_user) %>
+            <%= link_to("",favorite_product_path(@product),method: :post, class: "fa fa-thumbs-o-up fa-2x") %>点赞人气<%= @product.users.count %>
+          <% else %>
+            <%= link_to("", unfavorite_product_path(@product),method: :post,  class: "fa fa-thumbs-up fa-2x", style: "color:red") %>点赞人气<%= @product.users.count %>
+          <% end %>
+        </div>
       </div>
-     </div>
+
+
     </div>
 
 
