@@ -138,7 +138,7 @@
       <h4 class=text-center>人气商品</h4>
       <hr>
       <div>
-        <% Product.all.includes(:photos).sort_by {|product| product.favorites.count}.reverse.each_with_index do |product, index| %>
+         <% Product.limit(4).sort_by{|product| -product.favorites.count}.each do |product| %>
           <%= link_to product_path(product) do %>
                 <% if product.photos.present? %>
                   <%= image_tag(product.photos[0].avatar.medium.url, class: "thumbnail img-responsive") %>
