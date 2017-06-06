@@ -1,3 +1,5 @@
+
+
 <div class="nav-product">
   <div class="container-fluid text-left">
     <div class="row" >
@@ -22,7 +24,7 @@
         <div class="productDetail">
           <div class="productDetail-left">
             <div class="productDetail-left-bigImage">
-              <%= image_tag(@product.photos[0].avatar.medium.url, class: "thumbnail img-responsive") %>
+              <%= image_tag(@product.photos[0].avatar.url, class: "thumbnail img-responsive") %>
             </div>
             <!-- 下方缩略图-->
             <div class="productDetail-left-imageList ">
@@ -71,21 +73,29 @@
             <%= fa_icon("cart-arrow-down", text: "加入购物车") %>
            </button>
           <% end %>
-      </div>
+          <br>
+          <% if @product.quantity.present? && @product.quantity > 0 %>
+            <%= link_to( "立即下单", instant_buy_product_path(@product), class: "fa fa-cart-arrow-down btn btn-warning btn-lg ",  :method => :post) %>
+          <% else %>
+            已销售一空，无法购买
+          <% end %>
+        </div>
        <!-- 点赞按钮 -->
-       <div class="col-sm-6 favorite_button">
-        <% if !@product.users.include?(current_user) %>
-          <%= link_to("",favorite_product_path(@product),method: :post, class: "fa fa-thumbs-o-up fa-2x") %>点赞人气<%= @product.users.count %>
-        <% else %>
-          <%= link_to("", unfavorite_product_path(@product),method: :post,  class: "fa fa-thumbs-up fa-2x", style: "color:red") %>点赞人气<%= @product.users.count %>
-        <% end %>
+        <div class="col-sm-6 favorite_button">
+          <% if !@product.users.include?(current_user) %>
+            <%= link_to("",favorite_product_path(@product),method: :post, class: "fa fa-thumbs-o-up fa-2x") %>点赞人气<%= @product.users.count %>
+          <% else %>
+            <%= link_to("", unfavorite_product_path(@product),method: :post,  class: "fa fa-thumbs-up fa-2x", style: "color:red") %>点赞人气<%= @product.users.count %>
+          <% end %>
+        </div>
       </div>
-     </div>
+
+
     </div>
 
 
 
-    <div class="product-p col-md-10 col-md-offset-2">
+    <div class="product-p col-md-9 ">
        <ul class="nav nav-tabs">
          <li class="active"><a data-toggle="tab" href="#home">商品详情</a></li>
          <li><a data-toggle="tab" href="#menu1">用户评论</a></li>
@@ -96,13 +106,15 @@
              <p>
                <%= simple_format(@product.description)%>
              </p>
-             <% if @photos.present? %>
-               <% @photos.each_with_index do |p, index| %>
-                   <%= image_tag p.avatar.medium.url, class: "thumbnail img-responsive" %>
+             <div>
+               <% if @photos.present? %>
+                 <% @photos.each_with_index do |p, index| %>
+                     <%= image_tag p.avatar.medium.url, class: "thumbnail img-responsive" %>
+                 <% end %>
+               <% else %>
+                   <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
                <% end %>
-             <% else %>
-                 <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
-             <% end %>
+             </div>
            </div>
          </div>
          <div id="menu1" class="tab-pane fade">
@@ -122,5 +134,30 @@
       </div>
     </div>
 
+    <div class="product-p product-b col-md-3">
+      <h4 class=text-center>人气商品</h4>
+      <hr>
+      <div>
+        <% Product.all.includes(:photos).sort_by {|product| product.favorites.count}.reverse.each_with_index do |product, index| %>
+          <%= link_to product_path(product) do %>
+                <% if product.photos.present? %>
+                  <%= image_tag(product.photos[0].avatar.medium.url, class: "thumbnail img-responsive") %>
+                <% else %>
+                  <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
+                <% end %>
+          <% end %>
+          <div class="pull-left"> ￥ <%= product.price %> </div>
+          <div class="pull-right">
+           <% if !product.users.include?(current_user) %>
+             <%= link_to("",favorite_product_path(@product),method: :post, class: "fa fa-thumbs-o-up fa-2x") %>点赞人气<%= product.users.count %>
+           <% else %>
+             <%= link_to("", unfavorite_product_path(@product),method: :post,  class: "fa fa-thumbs-up fa-2x", style: "color:red") %>点赞人气<%= product.users.count %>
+           <% end %>
+         </div>
+        <% end %>
+      </div>
+     </div>
+
+    </div>
   </div>
 </div>

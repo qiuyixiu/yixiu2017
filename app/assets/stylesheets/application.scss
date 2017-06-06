@@ -293,7 +293,15 @@
           width: 32px; //定制图片宽度
           height: 32px; //定制图片高度
       }
-//====商品分类导航栏设置===//
+
+//商品分类导航栏设置
+
+    .affix {
+     top:0;
+     width: 90%;
+     z-index: 9999 !important;
+   }
+
     .nav-product  {
       text-align: center;
       background-color: #9e6966;
@@ -690,6 +698,11 @@ $pro-img:url(http://oon3erbcp.bkt.clouddn.com/pro-image.jpg);
   color: #996247;
 }
 
+.product-b {
+  border-radius: 3px;
+  border: 1px solid rgb(221,221,221);
+}
+
 // 页面头部微调
 .product-show {
   margin-top: 2em;
@@ -700,7 +713,8 @@ $pro-img:url(http://oon3erbcp.bkt.clouddn.com/pro-image.jpg);
 }
 
 .product-description {
-  margin: 1.5em auto 2em;
+  width: 500px;
+  margin: 50px auto ;
   line-height: 1.6em;
 }
 
