@@ -74,10 +74,10 @@
            </button>
           <% end %>
           <br>
-          <%= link_to carts_path do %>
-            <button type="submit" class="btn btn-warning <%= @product.quantity == 0 ? 'disabled' : '' %>">
-             <%= fa_icon("cart-arrow-down", text: "直接去结帐") %>
-            </button>
+          <% if @product.quantity.present? && @product.quantity > 0 %>
+            <%= link_to( "立即下单", instant_buy_product_path(@product), class: "fa fa-cart-arrow-down btn btn-warning btn-lg ",  :method => :post) %>
+          <% else %>
+            已销售一空，无法购买
           <% end %>
         </div>
        <!-- 点赞按钮 -->

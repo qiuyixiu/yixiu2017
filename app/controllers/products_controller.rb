@@ -53,16 +53,26 @@ class ProductsController < ApplicationController
     redirect_to product_path(@product)
   end
 
+  def instant_buy
+    @product = Product.find(params[:id])
+    if !current_cart.products.include?(@product)
+      current_cart.add_product_to_cart(@product)
+    else
+      flash[:warning] = "你的购物车已有此物品，快去结账吧"
+    end
+    redirect_to carts_path
+  end
+
   def favorite
     @product = Product.find(params[:id])
     current_user.favorite_products << @product
-    redirect_to :back, notice:"您已点赞宝贝!"
+    redirect_to :back
   end
 
   def unfavorite
     @product = Product.find(params[:id])
     current_user.favorite_products.delete(@product)
-    redirect_to :back, notice: "您已取消点赞宝贝!"
+    redirect_to :back 
   end
 
   def search

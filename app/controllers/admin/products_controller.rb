@@ -61,7 +61,7 @@ class Admin::ProductsController < ApplicationController
   def destroy
     @product = Product.find(params[:id])
     @product.destroy
-    redirect_to admin_products_path, alert: 'Product deleted'
+    redirect_to admin_products_path 
   end
 
   def publish
