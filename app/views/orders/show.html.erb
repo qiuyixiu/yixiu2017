@@ -84,53 +84,23 @@
         <%= link_to("取消订单", apply_to_cancel_order_path(@order), method: :post, class: "btn btn-info") %>
       <% end %>
     </div>
-    <% if !@order.is_paid? %>
-<<<<<<< HEAD
-      <div class="group pull-right">
-        <%= link_to("以支付宝支付", pay_with_alipay_order_path(@order.token), :method => :post, :class => "btn btn-danger") %>
-        <%= link_to("以微信支付", pay_with_wechat_order_path(@order.token), :method => :post, :class => "btn btn-danger") %>
-      </div>
-=======
-    <!-- <div class="pay col-md-4" >
-      <%= link_to("支付宝扫后点击", pay_with_alipay_order_path(@order.token), :method => :post, :class => "btn btn-danger") %>
-      <%= image_tag("http://oon3erbcp.bkt.clouddn.com/%E6%94%AF%E4%BB%98%E5%AE%9D.jpg") %>
-    </div> -->
+    <% if !@order.is_paid? %>    
     <div class="pay col-md-4" >
-
+      <%= image_tag("http://oon3erbcp.bkt.clouddn.com/%E6%94%AF%E4%BB%98%E5%AE%9D.jpg") %>
+    </div>
+    <div class="pay col-md-4" >
+      <%= link_to("支付宝扫后点击", pay_with_alipay_order_path(@order.token), :method => :post, :class => "btn btn-danger") %>
+    </div>
+    <div class="pay col-md-4" >
       <%= image_tag("http://oon3erbcp.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1.jpg") %>
     </div>
     <div class="pay col-md-4" >
       <%= link_to("微信扫后点击", pay_with_wechat_order_path(@order.token), :method => :post, :class => "btn btn-danger") %>
     </div>
+    </div>
       <br>
-
-
->>>>>>> c96a2852fe0556695a24096c1f275ff48ba491dd
     <% else %>
       <p class="text-center">此订单已完成付款</p>
     <% end %>
-   </div>
-
-
-
-   <!-- <% if !@order.is_paid? %>
-     <div class="group pull-right" >
-         <button onclick="we_on()" class="btn btn-danger">以微信支付
-           <div id="wechat_pay_overlay" onclick="we_off()">
-             <%= link_to(image_tag('http://微信.png'),
-             pay_with_wechat_order_path(@order.token), method: :post, class: "btn btn-danger") %>
-
-           </div>
-         </button>
-         <button onclick="ali_on()" class="btn btn-danger">以支付宝支付
-           <div id="alipay_overlay" onclick="ali_off()">
-
-
-           </div>
-         </button>
-     </div>
-   <% end %> -->
-
-
   </div>
 </div>
