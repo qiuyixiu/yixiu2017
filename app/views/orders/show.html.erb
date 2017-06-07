@@ -10,43 +10,39 @@
         <label class="col-xs-3 product-price-cart">单价</label>
         <label class="col-xs-3 product-quantity-cart">数量</label>
         <label class="col-xs-3 product-line-price-cart">小计</label>
-     </div>
+      </div>
+      <% @product_lists.each do |product_list| %>
+       <div class="product_list row text-center">
+         <!-- 名称 -->
+         <div class="col-xs-3 product-cart">
+          <%= product_list.product_name %>
+         </div>
 
-
-        <% @product_lists.each do |product_list| %>
-         <div class="product_list row text-center">
-           <!-- 名称 -->
-           <div class="col-xs-3 product-cart">
-            <%= product_list.product_name %>
-           </div>
-
-           <!-- 单价 -->
-          <div class="col-xs-3 product-cart">
-            <%= product_list.product_price %> RMB
-          </div>
-
-          <!-- 数量 -->
-          <div class="col-xs-3 product-cart">
-              <%= product_list.quantity %>
-          </div>
-
-          <!-- 总价 -->
-          <div class="col-xs-3 product-cart">
-            <%= product_list.product_price * product_list.quantity %> RMB
-           </div>
-          </div>
-          <hr>
-         <% end %>
+         <!-- 单价 -->
+        <div class="col-xs-3 product-cart">
+          <%= product_list.product_price %> RMB
         </div>
 
+        <!-- 数量 -->
+        <div class="col-xs-3 product-cart">
+            <%= product_list.quantity %>
+        </div>
 
+        <!-- 总价 -->
+        <div class="col-xs-3 product-cart">
+          <%= product_list.product_price * product_list.quantity %> RMB
+         </div>
+       </div>
+        <hr>
+      <% end %>
+    </div>
           <!-- 合计 -->
           <div class="container">
             <span class="pull-right text-center product-price-total">
               总计: <%= @order.total %> RMB
             </span>
           </div>
-        </div>
+
 
    <!-- 寄送详情表 -->
     <div class="row order-form-group">
@@ -79,28 +75,30 @@
    <!-- 列表之外 -->
     <div class="col-md-6 col-md-offset-3 order_footer">
       <hr>
-    <div class="col-md-4">
-      <% if @order.order_placed? || @order.paid? %>
-        <%= link_to("取消订单", apply_to_cancel_order_path(@order), method: :post, class: "btn btn-info") %>
+      <div class="col-md-4">
+        <% if @order.order_placed? || @order.paid? %>
+          <%= link_to("取消订单", apply_to_cancel_order_path(@order), method: :post, class: "btn btn-info") %>
+        <% end %>
+      </div>
+      <% if !@order.is_paid? %>
+      <div class="pay col-md-4" >
+        <%= image_tag("http://oon3erbcp.bkt.clouddn.com/%E6%94%AF%E4%BB%98%E5%AE%9D.jpg") %>
+      </div>
+      <div class="pay col-md-4" >
+        <%= link_to("支付宝扫后点击", pay_with_alipay_order_path(@order.token), :method => :post, :class => "btn btn-danger") %>
+      </div>
+      <div class="pay col-md-4" >
+        <%= image_tag("http://oon3erbcp.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1.jpg") %>
+      </div>
+      <div class="pay col-md-4" >
+        <%= link_to("微信扫后点击", pay_with_wechat_order_path(@order.token), :method => :post, :class => "btn btn-danger") %>
+      </div>
+
+        <br>
+      <% else %>
+        <p class="text-center">此订单已完成付款</p>
       <% end %>
     </div>
-    <% if !@order.is_paid? %>    
-    <div class="pay col-md-4" >
-      <%= image_tag("http://oon3erbcp.bkt.clouddn.com/%E6%94%AF%E4%BB%98%E5%AE%9D.jpg") %>
-    </div>
-    <div class="pay col-md-4" >
-      <%= link_to("支付宝扫后点击", pay_with_alipay_order_path(@order.token), :method => :post, :class => "btn btn-danger") %>
-    </div>
-    <div class="pay col-md-4" >
-      <%= image_tag("http://oon3erbcp.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1.jpg") %>
-    </div>
-    <div class="pay col-md-4" >
-      <%= link_to("微信扫后点击", pay_with_wechat_order_path(@order.token), :method => :post, :class => "btn btn-danger") %>
-    </div>
-    </div>
-      <br>
-    <% else %>
-      <p class="text-center">此订单已完成付款</p>
-    <% end %>
   </div>
+</div>
 </div>
