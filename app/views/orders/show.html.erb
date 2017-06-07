@@ -79,20 +79,36 @@
    <!-- 列表之外 -->
     <div class="col-md-6 col-md-offset-3 order_footer">
       <hr>
-    <div>
+    <div class="col-md-4">
       <% if @order.order_placed? || @order.paid? %>
-        <%= link_to("申请取消订单", apply_to_cancel_order_path(@order), method: :post, class: "btn btn-info") %>
+        <%= link_to("取消订单", apply_to_cancel_order_path(@order), method: :post, class: "btn btn-info") %>
       <% end %>
     </div>
     <% if !@order.is_paid? %>
+<<<<<<< HEAD
       <div class="group pull-right">
         <%= link_to("以支付宝支付", pay_with_alipay_order_path(@order.token), :method => :post, :class => "btn btn-danger") %>
         <%= link_to("以微信支付", pay_with_wechat_order_path(@order.token), :method => :post, :class => "btn btn-danger") %>
       </div>
+=======
+    <!-- <div class="pay col-md-4" >
+      <%= link_to("支付宝扫后点击", pay_with_alipay_order_path(@order.token), :method => :post, :class => "btn btn-danger") %>
+      <%= image_tag("http://oon3erbcp.bkt.clouddn.com/%E6%94%AF%E4%BB%98%E5%AE%9D.jpg") %>
+    </div> -->
+    <div class="pay col-md-4" >
+
+      <%= image_tag("http://oon3erbcp.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1.jpg") %>
+    </div>
+    <div class="pay col-md-4" >
+      <%= link_to("微信扫后点击", pay_with_wechat_order_path(@order.token), :method => :post, :class => "btn btn-danger") %>
+    </div>
+      <br>
+
+
+>>>>>>> c96a2852fe0556695a24096c1f275ff48ba491dd
     <% else %>
       <p class="text-center">此订单已完成付款</p>
     <% end %>
-
    </div>
 
 

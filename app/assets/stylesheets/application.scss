@@ -153,6 +153,7 @@
   html, body {
   height: 100%;
   margin: 0;
+  overflow-x:hidden; //去掉白边 横向导航栏
 }
 .body-content {
   min-height: 100%;
@@ -426,11 +427,11 @@
       }
     }
 
-    //====给予生活新花样 ====//
+    //====给予生活新可能 ====//
     .door-box{
       text-align: center;
       background-color: #F8F3ED;
-      margin:-15px;
+      // margin:-15px;
       padding: 50px 0 50px 0;
     }
 
@@ -486,7 +487,8 @@
  //=====服务优势=====//
 
     .advantage-box {
-      background-color: #FFFEFC;
+     background-color: #FFFEFC;
+
       margin: -15px;
       text-align: center;
       padding: 50px 0 50px 0;
@@ -512,6 +514,7 @@
     .text-small {
       color:#5A5A5A;
       font-size:0.9em;
+      
     }
 
 
@@ -834,6 +837,13 @@ $pro-img:url(http://oon3erbcp.bkt.clouddn.com/pro-image.jpg);
   margin-bottom: 20px;
 }
 
+.pay {
+  img {
+    width: 90%;
+    height: 90%;
+  }
+
+}
 
 
 
