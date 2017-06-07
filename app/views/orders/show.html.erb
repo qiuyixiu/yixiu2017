@@ -81,12 +81,12 @@
         <% end %>
       </div>
       <% if !@order.is_paid? %>
-      <div class="pay col-md-4" >
+      <!-- <div class="pay col-md-4" >
         <%= image_tag("http://oon3erbcp.bkt.clouddn.com/%E6%94%AF%E4%BB%98%E5%AE%9D.jpg") %>
       </div>
       <div class="pay col-md-4" >
         <%= link_to("支付宝扫后点击", pay_with_alipay_order_path(@order.token), :method => :post, :class => "btn btn-danger") %>
-      </div>
+      </div> -->
       <div class="pay col-md-4" >
         <%= image_tag("http://oon3erbcp.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1.jpg") %>
       </div>
