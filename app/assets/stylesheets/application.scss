@@ -150,11 +150,17 @@
 
  // ==== common====//
   //涉及到footer置底
-  html, body {
+  html {
   height: 100%;
   margin: 0;
-  overflow-x:hidden; //去掉白边 横向导航栏
 }
+
+body {
+height: 100%;
+margin: 0;
+overflow-x:hidden; //去掉白边 横向导航栏
+}
+
 .body-content {
   min-height: 100%;
   padding-bottom: 60px;
@@ -230,7 +236,7 @@
         border-color: #212121; //边框色
 
         margin-bottom: 20px; //底部 margin 不撑开距离
-
+      
     }
 
   @media (min-width: 768px) {
@@ -514,7 +520,7 @@
     .text-small {
       color:#5A5A5A;
       font-size:0.9em;
-      
+
     }
 
 
