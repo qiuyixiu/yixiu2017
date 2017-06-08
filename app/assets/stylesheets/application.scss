@@ -150,11 +150,17 @@
 
  // ==== common====//
   //涉及到footer置底
-  html, body {
+  html {
   height: 100%;
   margin: 0;
-  overflow-x:hidden; //去掉白边 横向导航栏
 }
+
+body {
+height: 100%;
+margin: 0;
+overflow-x:hidden; //去掉白边 横向导航栏
+}
+
 .body-content {
   min-height: 100%;
   padding-bottom: 60px;
@@ -224,14 +230,36 @@
   }
 
     .navbar-default {
-      background-color: #7c3a2d;  //背景颜色
+      // background-color: #7c3a2d;  //背景颜色
+      //   border-color: #212121; //边框色
+      // margin-bottom: 30px; //底部 margin 不撑开距离
 
 
-        border-color: #212121; //边框色
+        background: rgba(124,58,45,0.3);
+               a {
+                 color: #fff !important;
+               }
+               a:hover;
+               a:active;
+               a:focus {
+                 color: #E5B1A8 !important;
+               }
 
-        margin-bottom: 20px; //底部 margin 不撑开距离
+              &.show_navbar {
+                background-color: #7c3a2d !important;
+              }
 
-    }
+              a {
+                color: #FFF2F0 !important;
+              }
+
+              a:hover,
+              a:active,
+              a:focus {
+                color: #E5B1A8 !important;
+           }
+        }
+
 
   @media (min-width: 768px) {
     .navbar {
@@ -273,7 +301,7 @@
     .navbar-default .navbar-nav > .active > a:focus {
       color: #f9f7f4;
 
-      background-color: #9e6966;
+      background-color: rgba(124,58,45,0.1);
 
     }
 
@@ -453,6 +481,7 @@
     .story-box {
       /* 区块 */
       background-color: #FFFEFC;
+      // background-color: #666;
       text-align: center;
       padding: 25px 62.5px 50px 62.5px; //区块间隔
       margin: -15px;
@@ -488,7 +517,7 @@
 
     .advantage-box {
      background-color: #FFFEFC;
-
+  //  background-color: #666;
       margin: -15px;
       text-align: center;
       padding: 50px 0 50px 0;
@@ -514,7 +543,7 @@
     .text-small {
       color:#5A5A5A;
       font-size:0.9em;
-      
+
     }
 
 
@@ -580,7 +609,7 @@ $pro-img:url(http://oon3erbcp.bkt.clouddn.com/pro-image.jpg);
   color:  #996247; //字体颜色
   height: 180px;
   letter-spacing: 2px;
-  margin-top: -20px;
+  margin-top: 60px;
 }
 
 
