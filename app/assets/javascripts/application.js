@@ -83,7 +83,7 @@ $(document).on('mouseover', '.productDetail-left-imageList-item', function () {
 
 
 //在产品页面更改商品数量
-$(document).on('turbolinks:load', function() {
+$(document).ready(function() {
   /*增加数量*/
   $("#quantity-plus").click(function(e) {
     var num = parseInt($("#quantity-input").val()) + 1;
