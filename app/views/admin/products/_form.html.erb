@@ -2,6 +2,7 @@
   <div class="form-product">
     <%= f.input :title %>
     <%= f.input :description %>
+    <%= f.input :recommend %>
     <%= select_tag(:category_id, options_for_select(@categories), :prompt => "Category") %>
     <%= f.input :quantity %>
     <%= f.input :price %>
