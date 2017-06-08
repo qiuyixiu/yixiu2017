@@ -105,3 +105,14 @@ $(document).on('turbolinks:load', function() {
     e.preventDefault();
   });
 });
+
+
+//====导航栏的变化====//
+$(document).on('scroll', function(){
+// $(window).scroll(function)(){
+  if ($(this).scrollTop() > 125) {
+    $('#navbar').addClass('show_navbar')
+  } else {
+    $('#navbar').removeClass('show_navbar')
+  }
+})
