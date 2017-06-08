@@ -158,7 +158,7 @@
 body {
 height: 100%;
 margin: 0;
-// overflow-x:hidden; //去掉白边 横向导航栏
+overflow-x:hidden; //去掉白边 横向导航栏
 }
 
 .body-content {
@@ -232,8 +232,7 @@ margin: 0;
     .navbar-default {
       // background-color: #7c3a2d;  //背景颜色
       //   border-color: #212121; //边框色
-
-        // margin-bottom: 30px; //底部 margin 不撑开距离
+      // margin-bottom: 30px; //底部 margin 不撑开距离
 
 
         background: rgba(124,58,45,0.3);
@@ -482,6 +481,7 @@ margin: 0;
     .story-box {
       /* 区块 */
       background-color: #FFFEFC;
+      // background-color: #666;
       text-align: center;
       padding: 25px 62.5px 50px 62.5px; //区块间隔
       margin: -15px;
@@ -517,7 +517,7 @@ margin: 0;
 
     .advantage-box {
      background-color: #FFFEFC;
-
+  //  background-color: #666;
       margin: -15px;
       text-align: center;
       padding: 50px 0 50px 0;
@@ -609,7 +609,7 @@ $pro-img:url(http://oon3erbcp.bkt.clouddn.com/pro-image.jpg);
   color:  #996247; //字体颜色
   height: 180px;
   letter-spacing: 2px;
-  margin-top: 40px;
+  margin-top: 60px;
 }
 
 
