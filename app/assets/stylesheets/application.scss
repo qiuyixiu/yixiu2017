@@ -159,6 +159,7 @@ body {
 height: 100%;
 margin: 0;
 overflow-x:hidden; //去掉白边 横向导航栏
+padding-top:50px;  //让navbar不会挡到底下内容
 }
 
 .body-content {
@@ -308,9 +309,9 @@ overflow-x:hidden; //去掉白边 横向导航栏
     .navbar-default .navbar-nav > .open > a,
     .navbar-default .navbar-nav > .open > a:focus,
     .navbar-default .navbar-nav > .open > a:hover {
-      background-color: #FFE0B2;
+      background-color: #5E2316;
 
-      color:  #b58780;
+      color:  #C08073;
 
 
     }
@@ -323,6 +324,9 @@ overflow-x:hidden; //去掉白边 横向导航栏
           height: 32px; //定制图片高度
       }
 
+    .navbar-nav > li > .dropdown-menu {
+          background-color: #9f6965;
+    }
 //商品分类导航栏设置
 
     .affix {
@@ -358,6 +362,11 @@ overflow-x:hidden; //去掉白边 横向导航栏
 
 
   //==== banner====//
+.banner {
+  margin-top: -30px;  //让首页大图不像其他页面一样跑下去
+
+}
+
   .container-fluid .jumbotron {
       padding-bottom: 110px;
       margin: 0 -15px 0;//顶部margin为0，因此可以直接接着导航栏；左右margin为负15，因此可以顶到浏览器的边缘（抵消 container-fluid 的 15px 左右padding);底部margin为20，会跟下面的内容撑开距离
@@ -373,6 +382,7 @@ overflow-x:hidden; //去掉白边 横向导航栏
     position: relative;
     height: 670px;
     letter-spacing: 2px;
+    padding-top: -60px;
 
     &::before {
       content: "";
@@ -609,7 +619,7 @@ $pro-img:url(http://oon3erbcp.bkt.clouddn.com/pro-image.jpg);
   color:  #996247; //字体颜色
   height: 180px;
   letter-spacing: 2px;
-  margin-top: 60px;
+  margin-top: -5px;
 }
 
 
