@@ -609,6 +609,7 @@ $pro-img:url(http://oon3erbcp.bkt.clouddn.com/pro-image.jpg);
 
 
 
+//=====产品展示页面开始======//
 
 //====产品首图====//
 .pro-image {
@@ -675,6 +676,13 @@ $pro-img:url(http://oon3erbcp.bkt.clouddn.com/pro-image.jpg);
 
 .thumbnail:hover {
   box-shadow: 5px 0px 40px #996247;
+}
+
+.product-text {
+color: #7c3a2d;
+font-size: 1.5em;
+
+
 }
 
 //====商品详情页====//
