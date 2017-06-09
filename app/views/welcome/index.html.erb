@@ -64,91 +64,37 @@
 
 
 <!--===== 推荐商品 =====-->
-<div class="row">
  <section class="show-box">
    <div class="container">
-   <div class="row">
-
      <div class="col-md-10 col-md-offset-1">
        <h2 class="index-title">推荐商品</h2>
        <div class="short-line"></div> <!-- 分隔线 -->
-       <div class="row">
-         <div class="col-md-3">
-           <%= link_to '#' do %> <!-- 商品连结 -->
-             <div class="box"><img src="https://ww2.sinaimg.cn/large/006tNc79gy1fgbif7iz75j308c07j75v.jpg"></div> <!-- 商品图片 -->
-             <div class="content">
-               <p>Mac电脑包</p> <!-- 商品名称 -->
-               <p>￥ 380</p> <!-- 商品价格 -->
-             </div>
-           <% end %>
+     <div class="row">
+       <% @products.each do |product| %>
+         <% if product.recommend == "推荐"%>
+           <div class="col-xs-6 col-md-3 product-recommend">
+             <%= link_to product_path(product) do %>
+
+               <% if product.photos.present? %>
+                 <div class="box"><%= image_tag(product.photos[0].avatar.medium.url, class: "") %></div>
+               <% else %>
+                 <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+               <% end %>
+             <% end %>
+             <br>
+           <div class="col-md-12 product-info">
+             <%= product.title %>
+             <br><br>
+             ￥ <%= product.price %>
+             <br>
+
+           </div>
          </div>
-         <div class="col-md-3">
-           <%= link_to '#' do %>
-             <div class="box"><img src="https://ww1.sinaimg.cn/large/006tNc79gy1fgbjpzgmclj308c07j0uw.jpg"></div>
-             <div class="content">
-               <p>长款钱包</p>
-               <p>￥ 800</p>
-             </div>
-           <% end %>
-         </div>
-         <div class="col-md-3">
-           <%= link_to '#' do %>
-             <div class="box"><img src="https://ww1.sinaimg.cn/large/006tNc79gy1fgbitolt4zj308c07jjt6.jpg"></div>
-             <div class="content">
-               <p>双肩包</p>
-               <p>￥ 1500</p>
-             </div>
-           <% end %>
-         </div>
-         <div class="col-md-3">
-           <%= link_to '#' do %>
-             <div class="box"><img src="https://ww4.sinaimg.cn/large/006tNc79gy1fgbihtnm6qj308c07jmyv.jpg"></div>
-             <div class="content">
-               <p>单肩包</p>
-               <p>￥ 700</p>
-             </div>
-           <% end %>
-         </div>
-         <div class="col-md-3">
-           <%= link_to '#' do %>
-             <div class="box"><img src="https://ww2.sinaimg.cn/large/006tNc79gy1fgbjrnk7ylj308c07jwga.jpg"></div>
-             <div class="content">
-               <p>皮带</p>
-               <p>￥ 300</p>
-             </div>
-           <% end %>
-         </div>
-         <div class="col-md-3">
-           <%= link_to '#' do %>
-             <div class="box"><img src="https://ww2.sinaimg.cn/large/006tNc79gy1fgbk5847yej308c07j3yx.jpg"></div>
-             <div class="content">
-               <p>护指</p>
-               <p>￥ 50</p>
-             </div>
-           <% end %>
-         </div>
-         <div class="col-md-3">
-           <%= link_to '#' do %>
-             <div class="box"><img src="https://ww4.sinaimg.cn/large/006tNc79gy1fgbk55zenzj308c07jmyy.jpg"></div>
-             <div class="content">
-               <p>牛皮</p>
-               <p>￥ 200</p>
-             </div>
-           <% end %>
-         </div>
-         <div class="col-md-3">
-           <%= link_to '#' do %>
-             <div class="box"><img src="https://ww4.sinaimg.cn/large/006tNc79gy1fgbjpokjeuj308c07jmze.jpg"></div>
-             <div class="content">
-               <p>手工皮鞋课程</p>
-               <p>￥ 2680</p>
-             </div>
-           <% end %>
-         </div>
-       </div>
+         <% end %>
+       <% end %>
      </div>
    </div>
-   </div>
+ </div>
  </section>
 
 
@@ -192,4 +138,4 @@
         </div>
       </div>
     </div>
-  </div>
+</div>

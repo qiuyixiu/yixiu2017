@@ -327,18 +327,18 @@ overflow-x:hidden; //去掉白边 横向导航栏
 
     .affix {
      top:0;
-     width: 90%;
+     width: 80%;
      z-index: 9999 !important;
    }
 
     .nav-product  {
       text-align: center;
-      background-color: #9e6966;
+      background-color: #7c3a2d;
       color:  white;
       padding-top: 5px;
       word-spacing :30px;
-      height: 40px;
-      line-height: 20px;
+      height: 50px;
+      line-height: 30px;
     }
 
     .text-right {
@@ -877,6 +877,15 @@ $pro-img:url(http://oon3erbcp.bkt.clouddn.com/pro-image.jpg);
 
 
 //=====首页推荐商品 =====//
+.product-recommend {
+  text-align: center;
+
+  img {
+    width: 80%;
+    box-shadow: 2px 2px 5px #888;
+  }
+}
+
 .show-box {
   /* 区块 */
   // background-color: #FFFEFC;
