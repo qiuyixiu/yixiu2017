@@ -757,8 +757,20 @@ $pro-img:url(http://oon3erbcp.bkt.clouddn.com/pro-image.jpg);
 .product-text {
 color: #7c3a2d;
 font-size: 1.5em;
+}
 
-
+//现货标记
+.sticker {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 63px;
+    height: 63px;
+}
+.sticker-stock {
+    background: url(http://oon3erbcp.bkt.clouddn.com/stock2.png) no-repeat;
+    left: auto;
+    right: 0;
 }
 
 //====商品详情页====//

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170608093736) do
+ActiveRecord::Schema.define(version: 20170610070047) do
 
   create_table "average_caches", force: :cascade do |t|
     t.integer  "rater_id"
@@ -107,6 +107,7 @@ ActiveRecord::Schema.define(version: 20170608093736) do
     t.boolean  "is_hidden",   default: true
     t.integer  "category_id"
     t.string   "recommend"
+    t.boolean  "stock_tag",   default: true
   end
 
   create_table "rates", force: :cascade do |t|
