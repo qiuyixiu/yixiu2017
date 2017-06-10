@@ -160,6 +160,7 @@ height: 100%;
 margin: 0;
 overflow-x:hidden; //去掉白边 横向导航栏
 padding-top:50px;  //让navbar不会挡到底下内容
+position: relative;
 }
 
 .body-content {
@@ -327,6 +328,113 @@ padding-top:50px;  //让navbar不会挡到底下内容
 
     .navbar-nav > li > .dropdown-menu {
           background-color: #9f6965;
+    }
+
+
+//首页滑动功能设置
+#navigation-dots {
+    z-index: 7;
+    position: fixed;
+    top: 260px;
+    right: 5px;
+    margin-right: 20px;
+    float: right;
+}
+
+#navigation-dots li {
+  position: relative;
+  height: 20px;
+  margin: 10px 0;
+  list-style: none;
+}
+
+#navigation-dots li:hover .hover-navigation-dots {
+  display: block;
+}
+
+#navigation-dots .hover-navigation-dots {
+    display: none;
+    position: absolute;
+    right: 20px;
+    top: -8px;
+    background: transparent  no-repeat;
+    text-align: center;
+    white-space: nowrap;
+    min-height: 25px;
+}
+
+#navigation-dots span {
+    min-width: 80px;
+    padding: 5px 7px 7px;
+
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    background: #9f6965;
+    color: #fff;
+    font: inherit;
+
+    font-size: 1em;
+    letter-spacing: 0.07em;
+    display: block;
+    margin-right: 10px;
+}
+
+#navigation-dots a {
+  display: block;
+  width: 10px;
+  height: 10px;
+  background: #C08073;
+  border-radius: 8px;
+  text-indent: -10000px;
+  font-size: 1em;
+}
+
+#navigation-dots a:hover, #navigation-dots a.active {
+  background: #5E2316;
+}
+
+#navigation-dots .active a {
+    background: #5E2316;
+}
+
+
+
+
+
+
+
+
+//商品分类导航栏设置
+
+    .affix {
+     top:0;
+     width: 60%;
+     z-index: 9999 !important;
+   }
+
+    .nav-product  {
+      text-align: center;
+      background-color: #7c3a2d;
+      color:  white;
+      padding-top: 5px;
+      word-spacing :30px;
+      height: 50px;
+      line-height: 30px;
+    }
+
+    .text-right {
+      float: right;
+      padding-left: 30px;
+      padding-right: 30px;
+
+    }
+
+
+    .text-left {
+      float: left;
+      padding-left: 30px;
+      padding-right: 30px;
+      padding-top: 5px;
     }
 
 
@@ -837,8 +945,20 @@ $pro-img:url(http://oon3erbcp.bkt.clouddn.com/pro-image.jpg);
 .product-text {
 color: #7c3a2d;
 font-size: 1.5em;
+}
 
-
+//现货标记
+.sticker {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 63px;
+    height: 63px;
+}
+.sticker-stock {
+    background: url(http://oon3erbcp.bkt.clouddn.com/stock2.png) no-repeat;
+    left: auto;
+    right: 0;
 }
 
 //====商品详情页====//
@@ -1076,12 +1196,28 @@ font-size: 1.5em;
   margin-bottom: 1.5em;
 }
 
+
 .search-text {
     text-align: center;
     line-height: 14px;
     min-height: 20px;
     color:#996247;
 }
+
+
+//=====footer=====//
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,300);
+
+// #gotop {
+//   float: center;
+//   position: fixed;
+//
+//   bottom: 20px;
+//   color: #F25F5C;
+//   cursor: pointer;
+//   display: none; /*默认先隐藏掉*/
+// }
+
 
 
 //====多个页面通用的设置====//
