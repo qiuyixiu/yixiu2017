@@ -1068,9 +1068,15 @@ font-size: 1.5em;
 }
 
 
-//====我的账号页面====//
-.account-text {
+//====多个页面通用的设置====//
+.common-text {
   text-align: center;
+  margin:3em auto 2em;
+  color:#996247;
+}
+
+.table-text {
+  text-align:center;
   margin:3em auto 2em;
   color:#996247;
 }
