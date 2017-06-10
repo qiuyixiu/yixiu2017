@@ -148,7 +148,7 @@
 
 
 
- // ==== common====//
+ // ====== common======//
   //涉及到footer置底
   html {
   height: 100%;
@@ -167,6 +167,7 @@ position: relative;
   min-height: 100%;
   padding-bottom: 60px;
 }
+
  .footer {
   height: 60px;
   margin-top: -60px;
@@ -177,19 +178,12 @@ position: relative;
      padding-bottom:100px;/* main的padding-bottom值要等于或大于footer的height值 */
    }
 
-  //  body {
-  //    /* Margin bottom by footer height */
-  //    margin-bottom: 50px;
-  //  }
-
    .index-title {
      color:#7c3a2d;
      margin-bottom: 10px;
      font-size: 1.8em;
      font-weight: 700;
-    //  margin-top: 40px;
    }
-
 
   .section {
     padding-top: 50px;
@@ -226,6 +220,13 @@ position: relative;
       position: relative;
   }
 
+   .common-box {
+     margin-bottom: 3em;
+   }
+
+   .common-image-css {
+     transition: 0.8s;
+   }
   //====navbar====//
   .navbar {
     border: none;
@@ -437,6 +438,7 @@ position: relative;
     }
 
 
+
   //==== banner====//
 .banner {
   margin-top: -30px;  //让首页大图不像其他页面一样跑下去
@@ -562,6 +564,87 @@ position: relative;
 
     }
 
+    //=====服务优势=====//
+
+       .advantage-box {
+        background-color: #FFFEFC;
+     //  background-color: #666;
+         margin: -15px;
+         text-align: center;
+         padding: 50px 0 50px 0;
+       }
+
+       .image{
+         width: 10px;
+         height:10px;
+       }
+
+       .round {
+         margin-top: 10px;
+          border-radius:53%;
+          width: 150px;
+          height: 150px;
+       }
+
+       .river-text {
+         color:#5A5A5A;
+         font-size:1.3em;
+       }
+
+       .text-small {
+         color:#5A5A5A;
+         font-size:0.9em;
+
+       }
+
+
+       //=====首页推荐商品 =====//
+       .product-recommend {
+         text-align: center;
+
+         img {
+           width: 80%;
+           box-shadow: 2px 2px 5px #888;
+         }
+       }
+
+       .show-box {
+         /* 区块 */
+         // background-color: #FFFEFC;
+         background-color: #F8F3ED;
+         text-align: center;
+         padding: 50px 0 50px 0;
+         margin: -15px;
+
+         /* 图片 */
+         img {
+           width: 100%;
+         }
+
+         /* 图片区块 */
+         .box {
+           margin-top: 15px;
+           box-shadow: 2px 2px 5px #888;
+         }
+
+         /* 图片区块-鼠标滑动效果 */
+         .box:hover {
+           opacity: 0.6;
+         }
+
+         /* 文字区块 */
+         .content {
+           margin-top: 15px;
+           color: #000;
+         }
+       }
+
+       .show-box p {
+         color: #5A5A5A;
+       }
+
+
+
 
     /*===== 有关我们 =====*/
     .story-box {
@@ -597,43 +680,6 @@ position: relative;
         background-color:#5A5A5A;
       }
     }
-
-
- //=====服务优势=====//
-
-    .advantage-box {
-     background-color: #FFFEFC;
-  //  background-color: #666;
-      margin: -15px;
-      text-align: center;
-      padding: 50px 0 50px 0;
-    }
-
-    .image{
-      width: 10px;
-      height:10px;
-    }
-
-    .round {
-      margin-top: 10px;
-       border-radius:53%;
-       width: 150px;
-       height: 150px;
-    }
-
-    .river-text {
-      color:#5A5A5A;
-      font-size:1.3em;
-    }
-
-    .text-small {
-      color:#5A5A5A;
-      font-size:0.9em;
-
-    }
-
-
-
 
 
  //===首页底部图片即刻开始===／／
@@ -679,10 +725,152 @@ position: relative;
    }
 
 
+   //=====footer=====//
+   @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,300);
+
+   #gotop {
+     float: center;
+     position: fixed;
+
+     bottom: 20px;
+     color: #F25F5C;
+     cursor: pointer;
+     display: none; /*默认先隐藏掉*/
+   }
+
+     .full {
+       width: 100%;
+       background-color: #FFDFD9;
+       border-color: #FFF2F0;
+       border: 1px;
+
+   }
+   .gap {
+   	height: 30px;
+   	width: 100%;
+   	clear: both;
+   	display: block;
+   }
+
+
+   .newsletter-box input#appendedInputButton {
+   	background: #FFF2F0;
+   	display: inline-block;
+   	float: left;
+   	height: 30px;
+   	clear: both;
+   	width: 100%;
+   }
+   .newsletter-box .btn {
+   	border: medium none;
+   	-webkit-border-radius: 3px;
+   	-moz-border-radius: 3px;
+   	-o-border-radius: 3px;
+   	-ms-border-radius: 3px;
+   	border-radius: 3px;
+   	display: inline-block;
+   	height: 40px;
+   	padding: 0;
+   	width: 100%;
+   	color: #FFF2F0;
+   }
+   .newsletter-box {
+   	overflow: hidden;
+   }
+
+
+   ul,li{
+       padding:0;
+       margin:0;
+   }
+
+     .footer {
+      min-height:200px;
+      font-family: 'Open Sans', sans-serif;
+     	background: #7c3a2d;
+     	height: auto;
+     	padding-bottom: 20px;
+
+     	width: 100%;
+     	// border-bottom: 1px solid #5E2116;
+     	border-top: 1px solid #9A584C;
+     img {
+       width: 15%;
+     }
+   }
+   .footer-col {
+     margin-top:53px;
+   }
+   .logofooter { margin-bottom:10px;
+      font-size:21px;
+      font-weight:700;
+      color:#f9f7f4;
+      letter-spacing: 2px;}
+
+   .footer-col p {
+      color:#f9f7f4;
+      font-size:0.9em;
+      font-family: 'Open Sans', sans-serif;
+       margin-bottom:15px;
+       letter-spacing: 1px
+     }
+   .footer-col p i {
+     width:20px; color:#f9f7f4;
+   }
+
+    .heading7 {
+      font-size:0.9em;
+      font-weight:700;
+      color:#f9f7f4;
+      margin-bottom:10px;
+      letter-spacing: 3px;
+      	line-height: 10px;
+      	padding: 5px 0 0px;
+      	text-transform: uppercase;
+    }
+
+
+    .bg-red {
+    	background-image: -moz-linear-gradient(center bottom, #FFDFD9 100%, #FFDFD9 100%);
+      background-color: #E5B1A8;
+    	box-shadow: 0 1px 0 #FFF2F0;
+    }
 
 
 $pro-img:url(http://oon3erbcp.bkt.clouddn.com/pro-image.jpg);
 
+//商品分类导航栏设置
+
+    .affix {
+     top:0;
+     width: 80%;
+     z-index: 9999 !important;
+   }
+
+    .nav-product  {
+      text-align: center;
+      background-color: #7c3a2d;
+      color:  white;
+      // padding-top: 5px;
+      word-spacing :30px;
+      height: 50px;
+      line-height: 30px;
+    }
+
+    .text-right {
+      float: right;
+      padding-left: 30px;
+      padding-right: 30px;
+
+    }
+
+
+    .text-left {
+      float: left;
+      padding-left: 30px;
+      padding-right: 30px;
+      padding-top: 5px;
+    }
 
 
 //=====产品展示页面开始======//
@@ -778,7 +966,8 @@ font-size: 1.5em;
 /*产品详情页面多个图片信息*/
 .location {
 	line-height: 30px;
-	padding-bottom: 3px;
+	margin-bottom: -15px;
+
 }
 
 .productDetail {
@@ -841,10 +1030,15 @@ font-size: 1.5em;
   border: 1px solid rgb(221,221,221);
 }
 
-// 页面头部微调
-.product-show {
-  margin-top: 2em;
+//所有商品>成品。。。//
+.product-show-nav {
+  margin: 50px auto -20px;
 }
+
+// .product-show {
+//   margin-top: 2em;
+// }
+
 
 .product-title {
   color: #996247;
@@ -858,19 +1052,21 @@ font-size: 1.5em;
 
 .product-price-bgcolor {
   background-color: #fcf8f7;
-  padding: 1.5em 1em;
+  // padding: 0em 1em;
   margin-bottom: 1em;
+  padding: 1em 0 1em;
 }
 .product-price {
-  font-size: 3em;
-  color: #DAC1BE;
+  font-size: 2.5em;
+  color: #666;
   font-weight: lighter;
+
 }
 
 
 .product-quantity {
   margin: 1.5em auto;
-  color: #DAC1BE;
+  color: #666;
 }
 
 
@@ -881,15 +1077,20 @@ font-size: 1.5em;
 // 点赞按钮
 .favorite_button {
   line-height: 3em;
-  color: #DAC1BE;
+  color: #666;
+  margin: 5px 0 0;
+}
+
+.cart-button {
+  margin-top: 15px;
 }
 
 
+.buy-quantity {
+  color: #666;
+}
 
-
-
-
-//====购物车页面===//
+//======购物车页面=====//
 // 整体样式
 .shopping-cart {
   margin-top: 10px;
@@ -947,7 +1148,7 @@ font-size: 1.5em;
 }
 
 
-//checkout页面
+//=====checkout页面=====//
 .order-message {
   text-align: center;
   font-size: 1.7em;
@@ -967,7 +1168,7 @@ font-size: 1.5em;
   margin-bottom: 80px;
  }
 }
-//order展示页面
+//======order展示页面====//
 .order_footer {
   margin-bottom: 20px;
 }
@@ -977,54 +1178,30 @@ font-size: 1.5em;
     width: 90%;
     height: 90%;
   }
-
 }
 
 
-
-//=====首页推荐商品 =====//
-.product-recommend {
-  text-align: center;
-
-  img {
-    width: 80%;
-    box-shadow: 2px 2px 5px #888;
-  }
+//====搜索结果页面=====//
+.search-title {
+  //  font-weight: lighter;
+    color: #7c3a2d;
+    text-align: center;
 }
 
-.show-box {
-  /* 区块 */
-  // background-color: #FFFEFC;
-  background-color: #F8F3ED;
-  text-align: center;
-  padding: 50px 0 50px 0;
-  margin: -15px;
-
-  /* 图片 */
-  img {
-    width: 100%;
-  }
-
-  /* 图片区块 */
-  .box {
-    margin-top: 15px;
-    box-shadow: 2px 2px 5px #888;
-  }
-
-  /* 图片区块-鼠标滑动效果 */
-  .box:hover {
-    opacity: 0.6;
-  }
-
-  /* 文字区块 */
-  .content {
-    margin-top: 15px;
-    color: #000;
-  }
+.product-style {
+  margin: 3em auto 2em;
 }
 
-.show-box p {
-  color: #5A5A5A;
+.product-style-image {
+  margin-bottom: 1.5em;
+}
+
+
+.search-text {
+    text-align: center;
+    line-height: 14px;
+    min-height: 20px;
+    color:#996247;
 }
 
 
@@ -1041,100 +1218,56 @@ font-size: 1.5em;
 //   display: none; /*默认先隐藏掉*/
 // }
 
-  .full {
-    width: 100%;
-    background-color: #FFDFD9;
-    border-color: #FFF2F0;
-    border: 1px;
 
-}
-.gap {
-	height: 30px;
-	width: 100%;
-	clear: both;
-	display: block;
+
+//====多个页面通用的设置====//
+.common-text {
+  text-align: center;
+  margin:3em auto 2em;
+  color:#996247;
 }
 
-
-.newsletter-box input#appendedInputButton {
-	background: #FFF2F0;
-	display: inline-block;
-	float: left;
-	height: 30px;
-	clear: both;
-	width: 100%;
-}
-.newsletter-box .btn {
-	border: medium none;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	-o-border-radius: 3px;
-	-ms-border-radius: 3px;
-	border-radius: 3px;
-	display: inline-block;
-	height: 40px;
-	padding: 0;
-	width: 100%;
-	color: #FFF2F0;
-}
-.newsletter-box {
-	overflow: hidden;
+.table-text {
+  text-align:center;
+  margin:3em auto 2em;
+  color:#996247;
 }
 
-
-ul,li{
-    padding:0;
-    margin:0;
+//====favorite page=====//
+.favorite-text {
+  text-align: center;
+  margin:2em auto 0em;
+  color:#996247;
 }
 
-  .footer {
-   min-height:200px;
-   font-family: 'Open Sans', sans-serif;
-  	background: #7c3a2d;
-  	height: auto;
-  	padding-bottom: 20px;
-
-  	width: 100%;
-  	// border-bottom: 1px solid #5E2116;
-  	border-top: 1px solid #9A584C;
-  img {
-    width: 15%;
-  }
-}
-.footer-col {
-  margin-top:53px;
-}
-.logofooter { margin-bottom:10px;
-   font-size:21px;
-   font-weight:700;
-   color:#f9f7f4;
-   letter-spacing: 2px;}
-
-.footer-col p {
-   color:#f9f7f4;
-   font-size:0.9em;
-   font-family: 'Open Sans', sans-serif;
-    margin-bottom:15px;
-    letter-spacing: 1px
-  }
-.footer-col p i {
-  width:20px; color:#f9f7f4;
+.favorite-title {
+  line-height: 14px;
+  min-height: 20px;
+  color:#996247;
 }
 
- .heading7 {
-   font-size:0.9em;
-   font-weight:700;
-   color:#f9f7f4;
-   margin-bottom:10px;
-   letter-spacing: 3px;
-   	line-height: 10px;
-   	padding: 5px 0 0px;
-   	text-transform: uppercase;
- }
+//====admin product page====//
+.admin-product-text {
+  text-align: center;
+  margin:1em auto 0em;
+  color:#996247;
+}
 
+.product-table-text {
+  text-align:center;
+  margin:3em auto 2em;
+  color:#666;
+}
 
- .bg-red {
- 	background-image: -moz-linear-gradient(center bottom, #FFDFD9 100%, #FFDFD9 100%);
-   background-color: #E5B1A8;
- 	box-shadow: 0 1px 0 #FFF2F0;
- }
+.admin-product-image {
+  margin-bottom: 5px;
+  width: 150px;
+  height: 150px;
+  align-self: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.product-hide {
+  margin-top:8px;
+}

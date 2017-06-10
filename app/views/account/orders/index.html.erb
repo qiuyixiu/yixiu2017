@@ -1,23 +1,26 @@
-<h2>订单列表 </h2>
+<div class="container">
+<div class="common-text"><h2>订单列表 </h2></div>
 
-<table class="table table-bordered">
-  <thead>
-    <tr>
-      <th>订单序号</th>
-      <th>订单状态</th>
-      <th>生成时间</th>
 
-    </tr>
-  </thead>
-  <tbody>
+<div class="col-md-6 col-md-offset-3">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th  class="table-text">订单序号</th>
+        <th  class="table-text">订单状态</th>
+        <th  class="table-text">生成时间</th>
+      </tr>
+    </thead>
+    <tbody>
 
-    <% @orders.each do |order| %>
-    <tr>
-      <td> <%= link_to(order.id, order_path(order.token)) %> </td>
-      <td> <%= order.aasm_state %></td>
-      <td> <%= order.created_at.strftime("%Y-%m-%d %H:%M") %> </td>
-    </tr>
-    <% end %>
-
-  </tbody>
-</table>
+      <% @orders.each do |order| %>
+      <tr>
+        <td class="text-center"> <%= link_to(order.id, order_path(order.token)) %> </td>
+        <td class="text-center"> <%= order.aasm_state %> </td>
+        <td class="text-center"> <%= order.created_at.strftime("%Y-%m-%d %H:%M") %> </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+ </div>
+</div>

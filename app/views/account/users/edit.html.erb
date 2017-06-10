@@ -1,5 +1,9 @@
-<h2> 修改个人资料 </h2>
-<%= simple_form_for [:account, @user] do |f| %>
+<div class="container">
+  <div class="common-text">
+  <h2> 修改个人资料 </h2>
+  </div>
+  <div class="col-md-6 col-md-offset-3">
+  <%= simple_form_for [:account, @user] do |f| %>
   <div>
     <%= f.input :name, :label =>"用户名" %>
     <%= f.input :email, :label =>"邮箱" %>
@@ -8,4 +12,6 @@
     <%= link_to("取消", root_path, class: "btn btn-sm btn-default" ) %>
     <%= f.submit "提交", class: "btn btn-sm btn-default" %>
   </div>
-<% end %>
+ <% end %>
+ </div>
+</div>
