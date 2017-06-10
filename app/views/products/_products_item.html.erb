@@ -1,15 +1,15 @@
 
 
 <% @products.each do |product| %>
-  <div class="col-xs-6 col-md-3">
+  <div class="col-xs-6 col-md-3 text-center product-style">
     <%= link_to product_path(product) do %>
       <% if product.image.present? %>
-        <%= image_tag(product.image.thumb.url, class: "thumbnails") %>
+        <%= image_tag(product.image.thumb.url, class: "thumbnail product-style-img center-block ") %>
       <% else %>
-        <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+        <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail product-style-img center-block") %>
       <% end %>
     <% end %>
-      <%= product.title %> ￥ <%= product.price %>
+    <div class="search-text"> <%= product.title %> ￥ <%= product.price %></div>
     <% if !product.users.include?(current_user) %>
       <%= link_to("",favorite_product_path(product),method: :post, class: "fa fa-thumbs-o-up fa-2x") %><%= product.users.count %>
     <% else %>

@@ -219,6 +219,13 @@ padding-top:50px;  //让navbar不会挡到底下内容
       position: relative;
   }
 
+   .common-box {
+     margin-bottom: 3em;
+   }
+
+   .common-image-css {
+     transition: 0.8s;
+   }
   //====navbar====//
   .navbar {
     border: none;
@@ -1035,4 +1042,27 @@ font-size: 1.5em;
     width: 90%;
     height: 90%;
   }
+}
+
+
+//====搜索结果页面=====//
+.search-title {
+  //  font-weight: lighter;
+    color: #7c3a2d;
+    text-align: center;
+}
+
+.product-style {
+  margin: 3em auto 2em;
+}
+
+.product-style-image {
+  margin-bottom: 1.5em;
+}
+
+.search-text {
+    text-align: center;
+    line-height: 14px;
+    min-height: 20px;
+    color:#996247;
 }
