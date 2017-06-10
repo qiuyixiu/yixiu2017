@@ -3,6 +3,8 @@
   <div>
     <%= f.input :name, :label =>"用户名" %>
     <%= f.input :email, :label =>"邮箱" %>
+    <%= f.input :address, :label =>"收货地址" %>
+    <%= f.input :numbers, :label =>"手机号码" %>
     <%= link_to("取消", root_path, class: "btn btn-sm btn-default" ) %>
     <%= f.submit "提交", class: "btn btn-sm btn-default" %>
   </div>

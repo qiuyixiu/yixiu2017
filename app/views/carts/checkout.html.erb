@@ -72,16 +72,20 @@
       <%= simple_form_for @order do |f| %>
           <h4> 订购详情</h4>
           <div class="form-group">
-            <%= f.input :billing_name, :label => "订购人姓名" %>
-            <%= f.input :billing_address, :label => "订购人地址" %>
+            <%= f.input :billing_name, input_html: {value: current_user.name}, :label => "订购人姓名" %>
+            <%= f.input :phone_numbers, input_html: {value: current_user.numbers}, :label => "订购人电话" %>
+            <%= f.input :billing_address, input_html: {value: current_user.address}, :label => "订购人地址" %>
           </div>
 
           <h4> 收货详情</h4>
           <div class="form-group">
-            <%= f.input :shipping_name, :label => "收货人姓名" %>
+            <%= f.input :shipping_name, input_html: {value: current_user.name}, :label => "收货人姓名" %>
           </div>
           <div class="form-group">
-            <%= f.input :shipping_address, :label => "收货人地址" %>
+            <%= f.input :phone_numbers, input_html: {value: current_user.numbers}, :label => "收货人电话" %>
+          </div>
+          <div class="form-group">
+            <%= f.input :shipping_address, input_html: {value: current_user.address}, :label => "收货人地址" %>
           </div>
 
         <div class="checkout">
