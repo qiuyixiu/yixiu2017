@@ -7,7 +7,7 @@
 <table class="table table-bordered">
   <thead>
     <tr>
-      <th class="table-text">#</th>
+      <th class="table-text">序号</th>
       <th width="220" class="table-text">产品图片</th>
       <th class="table-text">分类</th>
       <th class="table-text">名称</th>
@@ -32,7 +32,7 @@
         <% end %>
       </td>
       <td>
-        <%= product.category_id %>
+        <%= product.category.name %>
       </td>
       <td>
         <%= product.title %>
