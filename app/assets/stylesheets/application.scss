@@ -400,11 +400,28 @@ position: relative;
 
 //商品分类导航栏设置
 
-    .affix {
-     top:0;
-     width: 60%;
-     z-index: 9999 !important;
-   }
+  //   .affix {
+  //    position: absolute;
+  //    top: 0px;
+  //    width: 20%;
+  //    z-index: 9999;
+  //  }
+
+  .affix {
+        top: 0;
+        width: 100%;
+        -webkit-transition: all .5s ease-in-out;
+        transition: all .5s ease-in-out;
+    }
+
+   .affix a {
+    color: #fff;
+    padding: 15px;
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+    }
+
+
 
     .nav-product  {
       text-align: center;
@@ -419,7 +436,7 @@ position: relative;
     .text-right {
       float: right;
       padding-left: 30px;
-      padding-right: 30px;
+      padding-right: 0px;
 
     }
 
