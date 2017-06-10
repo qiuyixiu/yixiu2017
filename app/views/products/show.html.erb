@@ -1,18 +1,19 @@
 
-
-<div class="nav-product">
-  <div class="container-fluid text-left">
-    <div class="row" >
-      <p class="location"><%= link_to("所有商品", products_path, style: "color:white")%> >
+<div class="container product-show-nav">
+<!-- <div class="nav-product"> -->
+  <!-- <div class="container-fluid"> -->
+    <!-- <div class="row" > -->
+      <p class="location"><%= link_to("所有商品", products_path, style: "color:gray")%> >
         <% Category.all.each do |category| %>
               <% if @product.category.name == category.name %>
-            <%= link_to category.name, products_path(category: category.name), class: "link", style: "color:white" %>
+            <%= link_to category.name, products_path(category: category.name), class: "link", style: "color:gray" %>
         <% end %>
         <% end %>
         > <%= @product.title %>
       </p>
-    </div>
-  </div>
+    <!-- </div> -->
+  <!-- </div> -->
+<!-- </div> -->
 </div>
 <br>
 
@@ -47,9 +48,10 @@
           <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
       <% end %>
     </div>
-    <br><br><br>
 
 
+   <br/>
+ <br/>
 
     <!-- 商品信息 -->
     <div class="col-md-5">
@@ -59,19 +61,34 @@
       </div>
       <div class="product-quantity"> 库存 : <%= @product.quantity %> </div>
 
-      <br><br><br><br>
+      <br>
 
       <div class="add-to-cart-button row">
-        <div class="col-sm-6">
+        <!-- <div class="col-sm-6"> -->
           <%= simple_form_for @product, method: :post, url: add_to_cart_product_path(@product) do |f| %>
-           <div class="buy-quantity">
+
+          <!-- 点赞按钮 -->
+           <div class="favorite_button">
+             <% if !@product.users.include?(current_user) %>
+               <%= link_to("",favorite_product_path(@product),method: :post, class: "fa fa-thumbs-o-up fa-2x") %>点赞人气<%= @product.users.count %>
+             <% else %>
+               <%= link_to("", unfavorite_product_path(@product),method: :post,  class: "fa fa-thumbs-up fa-2x", style: "color:red") %>点赞人气<%= @product.users.count %>
+             <% end %>
+           </div>
+        </div>
+
+           <div class="buy-quantity">数量：
             <%= link_to("-", "", id: "quantity-minus", class: "quantity-minus btn btn-default disabled", style: "color:#DAC1BE") %>
             <input type="text" name="quantity" value="1" id="quantity-input" class="quantity-input">
             <%= link_to("+", "", id: "quantity-plus", class: "quantity-plus btn btn-default #{@product.quantity <= 1 ? 'disabled' : ''}", style: "color:#DAC1BE") %>
            </div>
+
+
+           <div class="cart-button">
            <button type="submit" class="btn btn-danger <%= @product.quantity == 0 ? 'disabled' : '' %>">
             <%= fa_icon("cart-arrow-down", text: "加入购物车") %>
            </button>
+           </div>
           <% end %>
           <br>
           <% if @product.quantity.present? && @product.quantity > 0 %>
@@ -79,18 +96,7 @@
           <% else %>
             已销售一空，无法购买
           <% end %>
-        </div>
-       <!-- 点赞按钮 -->
-        <div class="col-sm-6 favorite_button">
-          <% if !@product.users.include?(current_user) %>
-            <%= link_to("",favorite_product_path(@product),method: :post, class: "fa fa-thumbs-o-up fa-2x") %>点赞人气<%= @product.users.count %>
-          <% else %>
-            <%= link_to("", unfavorite_product_path(@product),method: :post,  class: "fa fa-thumbs-up fa-2x", style: "color:red") %>点赞人气<%= @product.users.count %>
-          <% end %>
-        </div>
-      </div>
-
-
+        <!-- </div> -->
     </div>
 
 

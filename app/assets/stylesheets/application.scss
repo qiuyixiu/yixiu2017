@@ -743,7 +743,7 @@ $pro-img:url(http://oon3erbcp.bkt.clouddn.com/pro-image.jpg);
       text-align: center;
       background-color: #7c3a2d;
       color:  white;
-      padding-top: 5px;
+      // padding-top: 5px;
       word-spacing :30px;
       height: 50px;
       line-height: 30px;
@@ -846,7 +846,8 @@ font-size: 1.5em;
 /*产品详情页面多个图片信息*/
 .location {
 	line-height: 30px;
-	padding-bottom: 3px;
+	margin-bottom: -15px;
+
 }
 
 .productDetail {
@@ -909,10 +910,15 @@ font-size: 1.5em;
   border: 1px solid rgb(221,221,221);
 }
 
-// 页面头部微调
-.product-show {
-  margin-top: 2em;
+//所有商品>成品。。。//
+.product-show-nav {
+  margin: 50px auto -20px;
 }
+
+// .product-show {
+//   margin-top: 2em;
+// }
+
 
 .product-title {
   color: #996247;
@@ -926,19 +932,21 @@ font-size: 1.5em;
 
 .product-price-bgcolor {
   background-color: #fcf8f7;
-  padding: 1.5em 1em;
+  // padding: 0em 1em;
   margin-bottom: 1em;
+  padding: 1em 0 1em;
 }
 .product-price {
-  font-size: 3em;
-  color: #DAC1BE;
+  font-size: 2.5em;
+  color: #666;
   font-weight: lighter;
+
 }
 
 
 .product-quantity {
   margin: 1.5em auto;
-  color: #DAC1BE;
+  color: #666;
 }
 
 
@@ -949,10 +957,18 @@ font-size: 1.5em;
 // 点赞按钮
 .favorite_button {
   line-height: 3em;
-  color: #DAC1BE;
+  color: #666;
+  margin: 5px 0 0;
+}
+
+.cart-button {
+  margin-top: 15px;
 }
 
 
+.buy-quantity {
+  color: #666;
+}
 
 //======购物车页面=====//
 // 整体样式
