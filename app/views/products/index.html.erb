@@ -96,6 +96,9 @@
               <% else %>
                 <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
               <% end %>
+              <% if product.stock_tag %>
+              <div class="sticker sticker-stock"></div>
+              <% end %>
 
             <% end %>
           <br><br>
