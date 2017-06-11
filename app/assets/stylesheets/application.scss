@@ -469,9 +469,13 @@ position: relative;
     background-size: cover;
     color:  #FFF2F0; //字体颜色
     position: relative;
-    height: 670px;
+    height: 100vh;
     letter-spacing: 2px;
     padding-top: -60px;
+
+
+
+
 
     &::before {
       content: "";
@@ -1281,4 +1285,29 @@ font-size: 1.5em;
 
 .product-hide {
   margin-top:8px;
+}
+
+
+
+//首图箭头
+a.scroll-arrow {
+  font-size: 35px;
+  color: red;
+  width: 50px;
+  line-height: 52px;
+  border-radius: 50%;
+  height: 50px;
+  // border: 1px solid white;
+  display: block;
+  margin: 0 auto;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  z-index: 1029;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+  opacity: .9;
 }
