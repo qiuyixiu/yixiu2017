@@ -139,7 +139,8 @@
    border-radius: 0;//圆角为0
   }
 
-  $banner: url(https://ww3.sinaimg.cn/large/006tNbRwgy1ffruxo1u8ij30sg0iyndz.jpg);
+  // $banner: url(https://ww3.sinaimg.cn/large/006tNbRwgy1ffruxo1u8ij30sg0iyndz.jpg);
+  $banner: url(http://oon3erbcp.bkt.clouddn.com/banner.jpg);
   $banner-color: #f4f6f7;
   $btn-color: #fff;
   $btn-background: #29426b;
@@ -381,8 +382,8 @@ position: relative;
 
 #navigation-dots a {
   display: block;
-  width: 10px;
-  height: 10px;
+  width: 10px !important;
+  height: 10px !important;
   background: #C08073;
   border-radius: 8px;
   text-indent: -10000px;
