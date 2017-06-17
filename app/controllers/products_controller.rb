@@ -32,7 +32,7 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @product = Product.find(params[:id])
+    @product = Product.find_by_friendly_id!(params[:id])
     @comments = @product.comments
     @photos = @product.photos.all
 
@@ -72,7 +72,7 @@ class ProductsController < ApplicationController
   def unfavorite
     @product = Product.find(params[:id])
     current_user.favorite_products.delete(@product)
-    redirect_to :back 
+    redirect_to :back
   end
 
   def search

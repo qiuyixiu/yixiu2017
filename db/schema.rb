@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170610090825) do
+ActiveRecord::Schema.define(version: 20170617215554) do
 
   create_table "average_caches", force: :cascade do |t|
     t.integer  "rater_id"
@@ -109,6 +109,8 @@ ActiveRecord::Schema.define(version: 20170610090825) do
     t.integer  "category_id"
     t.string   "recommend"
     t.boolean  "stock_tag",   default: true
+    t.string   "friendly_id"
+    t.index ["friendly_id"], name: "index_products_on_friendly_id", unique: true
   end
 
   create_table "rates", force: :cascade do |t|
