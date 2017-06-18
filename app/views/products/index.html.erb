@@ -18,7 +18,9 @@
 
 
         <div class="text-left" >
-          商品分类：
+          <%= link_to "中文版", :controller => controller_name, :action => action_name, :locale => "zh-CN" %>
+          <%= link_to "English", :controller => controller_name, :action => action_name, :locale => "en" %>
+          <%= t("product_category") %> ：
           <a href="#pg" style= "color:white">所有商品</a>
           <a href="#cp" style= "color:white">成品</a>
           <a href="#cl" style= "color:white">材料</a>
