@@ -35,7 +35,8 @@
         <%= product.category.name %>
       </td>
       <td>
-        <%= product.title %>
+        <!-- <%= product.title %> -->
+        <%= link_to product.title, admin_product_path(product) %>
       </td>
       <td>
         <%= product.price %>

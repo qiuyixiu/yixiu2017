@@ -16,6 +16,7 @@
 //= require bootstrap.min
 //= require jquery.raty
 //= require ratyrate
+//= Chart.min
 //= require_tree .
 
 
